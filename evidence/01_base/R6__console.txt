@@ -1,0 +1,128 @@
+# R6 console buffer at 2026-10-30T16:13:03.012Z
+
+O IA    10.1.1.0 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.2.0 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.3.1 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.10.0 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.25.0 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.3.1.0 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.3.47.0 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.1 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.2 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.3 [110/2] via 10.2.36.1, 00:01:00, GigabitEthernet0/0
+O IA    10.255.0.4 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.5 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.7 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0 [110/20] via 10.2.36.1, 00:00:30, GigabitEthernet0/0
+O E2    172.16.1.0 [110/20] via 10.2.36.1, 00:00:30, GigabitEthernet0/0
+O E1 203.0.113.0 [110/22] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+
+R6#show ip ospf
+ Routing Process "ospf 1" with ID 6.6.6.6
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 4. Checksum Sum 0x02c5d5
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ External flood list length 0
+    Area 2
+        Number of interfaces in this area is 3
+        Area has no authentication
+        SPF algorithm executed 4 times
+        Area ranges are
+        Number of LSA 19. Checksum Sum 0x09dece
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R6#show ip ospf database
+            OSPF Router with ID (6.6.6.6) (Process ID 1)
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+6.6.6.6         6.6.6.6         70          0x80000004 0x003c22 4
+3.3.3.3         3.3.3.3         70          0x80000002 0x004d67 2
+
+                Summary Net Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.0        3.3.3.3         65          0x80000001 0x00b691
+10.255.0.3      3.3.3.3         65          0x80000002 0x0096ad
+10.255.0.1      3.3.3.3         20          0x80000005 0x00ae93
+10.0.12.0       3.3.3.3         20          0x80000006 0x002019
+10.255.0.2      3.3.3.3         20          0x80000007 0x00a09e
+10.255.0.4      3.3.3.3         20          0x80000008 0x008ab1
+10.3.47.0       3.3.3.3         20          0x80000009 0x00739c
+10.3.1.0        3.3.3.3         20          0x8000000a 0x0089af
+10.255.0.7      3.3.3.3         20          0x8000000b 0x0070c4
+10.1.25.0       3.3.3.3         20          0x8000000c 0x0078ac
+10.1.10.0       3.3.3.3         20          0x8000000d 0x0038f6
+10.1.1.0        3.3.3.3         20          0x8000000e 0x00999d
+10.1.2.0        3.3.3.3         20          0x8000000f 0x008ca8
+10.1.3.1        3.3.3.3         20          0x80000010 0x0075bc
+10.255.0.5      3.3.3.3         20          0x80000011 0x0078b8
+
+                Summary ASB Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+7.7.7.7         3.3.3.3         35          0x80000003 0x00e34f
+1.1.1.1         3.3.3.3         20          0x80000004 0x00f653
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         80          0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         79          0x80000001 0x00ef10 0
+172.16.0.0      7.7.7.7         80          0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         79          0x80000001 0x006680 0
+R6#show ip ospf border-routers
+OSPF Process 1 internal Routing Table
+
+Codes: i - Intra-area route, I - Inter-area route
+
+i 3.3.3.3 [1] via 10.2.36.1, GigabitEthernet0/0, ABR, Area 2, SPF 1
+R6#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 10.2.36.1 to network 0.0.0.0
+
+     10.0.0.0/8 is variably subnetted, 20 subnets, 3 masks
+O IA    10.0.0.0/24 [110/2] via 10.2.36.1, 00:01:00, GigabitEthernet0/0
+O IA    10.0.12.0/30 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.1.0/24 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.2.0/24 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.3.1/32 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.10.0/24 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.1.25.0/30 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+C       10.2.10.0/24 is directly connected, GigabitEthernet0/1
+L       10.2.10.1/32 is directly connected, GigabitEthernet0/1
+C       10.2.36.0/30 is directly connected, GigabitEthernet0/0
+L       10.2.36.2/32 is directly connected, GigabitEthernet0/0
+O IA    10.3.1.0/24 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.3.47.0/30 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.1/32 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.2/32 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.3/32 [110/2] via 10.2.36.1, 00:01:00, GigabitEthernet0/0
+O IA    10.255.0.4/32 [110/3] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O IA    10.255.0.5/32 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+C       10.255.0.6/32 is directly connected, Loopback0
+O IA    10.255.0.7/32 [110/4] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0/24 [110/20] via 10.2.36.1, 00:00:30, GigabitEthernet0/0
+O E2    172.16.1.0/24 [110/20] via 10.2.36.1, 00:00:30, GigabitEthernet0/0
+O E1 203.0.113.0/24 [110/22] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.2.36.1, 00:00:15, GigabitEthernet0/0
+
+R6#

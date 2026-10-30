@@ -1,0 +1,106 @@
+# R1 console buffer at 2026-10-30T16:38:55.127Z
+
+2.2.2.2          50   FULL/BDR        00:00:33    10.0.0.2        GigabitEthernet0/0
+3.3.3.3           0   FULL/DROTHER    00:00:33    10.0.0.3        GigabitEthernet0/0
+R1#show interfaces GigabitEthernet0/2
+GigabitEthernet0/2 is up, line protocol is up (connected)
+  Hardware is CN Gigabit Ethernet, address is 0001.c747.6a03 (bia 0001.c747.6a03)
+  Description: TO-R2-DIRECT
+  Internet address is 10.0.12.1/30
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00, 
+  Last input 00:00:08, output 00:00:05, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0 (size/max/drops); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue :0/40 (size/max)
+  5 minute input rate 125 bits/sec, 0 packets/sec
+  5 minute output rate 114 bits/sec, 0 packets/sec
+     278 packets input, 20800 bytes, 0 no buffer
+     Received 0 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 watchdog, 1017 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     215 packets output, 14464 bytes, 0 underruns
+     0 output errors, 0 collisions, 1 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier
+     0 output buffer failures, 0 output buffers swapped out
+
+R1#show ip ospf interface GigabitEthernet0/0
+
+GigabitEthernet0/0 is up, line protocol is up
+  Internet address is 10.0.0.1/24, Area 0
+  Process ID 1, Router ID 1.1.1.1, Network Type BROADCAST, Cost: 100
+  Transmit Delay is 1 sec, State DR, Priority 100
+  Designated Router (ID) 1.1.1.1, Interface address 10.0.0.1
+  Backup Designated Router (ID) 2.2.2.2, Interface address 10.0.0.2
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:03
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 2, Adjacent neighbor count is 2
+    Adjacent with neighbor 2.2.2.2  (Backup Designated Router)
+    Adjacent with neighbor 3.3.3.3
+  Suppress hello for 0 neighbor(s)
+R1#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+
+00:07:26: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+00:07:26: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from DOWN to INIT, Received Hello
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from INIT to 2WAY, 2-Way Received
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from 2WAY to EXSTART, AdjOK?
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from EXCHANGE to FULL, Exchange Done
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from LOADING to FULL, Loading Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R1#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           0   FULL/  -        00:00:35    10.0.12.2       GigabitEthernet0/2
+2.2.2.2          50   FULL/BDR        00:00:39    10.0.0.2        GigabitEthernet0/0
+3.3.3.3           0   FULL/DROTHER    00:00:39    10.0.0.3        GigabitEthernet0/0
+4.4.4.4           0   FULL/DROTHER    00:00:39    10.0.0.4        GigabitEthernet0/0
+R1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface GigabitEthernet0/2
+R1(config-if)#no ip ospf network point-to-point
+R1(config-if)#end
+R1#
+00:08:30: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:08:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from DOWN to INIT, Received Hello
+
+00:08:36: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/2 from INIT to 2WAY, 2-Way Received

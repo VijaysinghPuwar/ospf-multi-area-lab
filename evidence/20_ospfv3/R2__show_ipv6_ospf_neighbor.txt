@@ -1,0 +1,9 @@
+# R2# show ipv6 ospf neighbor   (captured 2026-10-30T16:34:52.084Z)
+show ipv6 ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Interface ID    Interface
+1.1.1.1           1   2WAY/DROTHER    00:00:35    1               GigabitEthernet0/0
+3.3.3.3           1   FULL/BDR        00:00:35    1               GigabitEthernet0/0
+4.4.4.4           1   FULL/DR         00:00:35    1               GigabitEthernet0/0
+5.5.5.5           1   FULL/DR         00:00:35    1               GigabitEthernet0/1
+R2#

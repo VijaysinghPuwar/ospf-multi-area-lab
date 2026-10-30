@@ -1,0 +1,111 @@
+# R3 console buffer at 2026-10-30T16:13:03.012Z
+
+
+00:00:59: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:59: %OSPFv3-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:59: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:59: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:59: %OSPFv3-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:59: %OSPFv3-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:01:04: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R3#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:30    10.0.0.1        GigabitEthernet0/0
+2.2.2.2           1   FULL/DROTHER    00:00:30    10.0.0.2        GigabitEthernet0/0
+4.4.4.4           1   FULL/DR         00:00:30    10.0.0.4        GigabitEthernet0/0
+6.6.6.6           0   FULL/  -        00:00:30    10.2.36.2       GigabitEthernet0/1
+R3#show ip ospf interface brief
+Interface     PID   Area                     IP Address/Mask          Cost  State  Nbrs F/C
+Gig0/0          1   0                         10.0.0.3/255.255.255.0   1      BDR  0/0
+Lo0             1   0                     10.255.0.3/255.255.255.255   1     WAIT  0/0
+Gig0/1          1   2                      10.2.36.1/255.255.255.252   1    POINT  0/0
+
+R3#show ip route ospf
+     10.0.0.0/8 is variably subnetted, 20 subnets, 3 masks
+O       10.0.12.0 [110/2] via 10.0.0.1, 00:00:20, GigabitEthernet0/0
+                  [110/2] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O IA    10.1.1.0 [110/3] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O IA    10.1.2.0 [110/3] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O IA    10.1.3.1 [110/3] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O IA    10.1.10.0 [110/3] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O IA    10.1.25.0 [110/2] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O       10.2.10.0 [110/2] via 10.2.36.2, 00:01:00, GigabitEthernet0/1
+O IA    10.3.1.0 [110/3] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+O IA    10.3.47.0 [110/2] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+O       10.255.0.1 [110/2] via 10.0.0.1, 00:00:20, GigabitEthernet0/0
+O       10.255.0.2 [110/2] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O       10.255.0.4 [110/2] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+O IA    10.255.0.5 [110/3] via 10.0.0.2, 00:00:20, GigabitEthernet0/0
+O       10.255.0.6 [110/2] via 10.2.36.2, 00:01:00, GigabitEthernet0/1
+O IA    10.255.0.7 [110/3] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0 [110/20] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+O E2    172.16.1.0 [110/20] via 10.0.0.4, 00:00:20, GigabitEthernet0/0
+O E1 203.0.113.0 [110/21] via 10.0.0.1, 00:00:20, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.0.0.1, 00:00:20, GigabitEthernet0/0
+
+R3#show ip ospf
+ Routing Process "ospf 1" with ID 3.3.3.3
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ It is an area border router
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 4. Checksum Sum 0x02c5d5
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 2. 2 normal 0 stub 0 nssa
+ External flood list length 0
+    Area BACKBONE(0)
+        Number of interfaces in this area is 2
+        Area has no authentication
+        SPF algorithm executed 4 times
+        Area ranges are
+        Number of LSA 18. Checksum Sum 0x09f45a
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+    Area 2
+        Number of interfaces in this area is 1
+        Area has no authentication
+        SPF algorithm executed 3 times
+        Area ranges are
+        Number of LSA 19. Checksum Sum 0x09dece
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R3#

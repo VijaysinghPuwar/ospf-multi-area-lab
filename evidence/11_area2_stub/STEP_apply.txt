@@ -1,0 +1,8 @@
+# step 11_area2_stub applied 2026-10-30T16:21:32.648Z
+R6(config)# router ospf 1
+   router ospf 1
+   R6(config-router)#
+R6(config)# area 2 stub
+   area 2 stub
+   R6(config-router)#
+rejected=0

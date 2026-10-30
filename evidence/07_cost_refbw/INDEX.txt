@@ -1,0 +1,8 @@
+capture 07_cost_refbw at 2026-10-30T16:20:14.220Z
+evidence/07_cost_refbw/R1__show_interfaces_GigabitEthernet0_2.txt  (1442 chars)
+evidence/07_cost_refbw/R1__show_ip_ospf_interface_brief.txt  (386 chars)
+evidence/07_cost_refbw/R2__show_ip_ospf_interface_brief.txt  (473 chars)
+evidence/07_cost_refbw/R1__show_ip_route_ospf.txt  (1337 chars)
+evidence/07_cost_refbw/R1__show_ip_route_10_1_10_0.txt  (333 chars)
+evidence/07_cost_refbw/R1__show_ip_ospf_interface_GigabitEthernet0_0.txt  (850 chars)
+evidence/07_cost_refbw/R6__show_ip_route_ospf.txt  (1487 chars)

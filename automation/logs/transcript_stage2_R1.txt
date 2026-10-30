@@ -1,0 +1,148 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R1(config)# | hostname R1
+    hostname R1
+    R1(config)#
+R1(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R1(config)#
+R1(config)# | ipv6 unicast-routing
+    ipv6 unicast-routing
+    R1(config)#
+R1(config-rtr)# | ipv6 router ospf 1
+    ipv6 router ospf 1
+    %OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router-id,please configure manually
+    R1(config-rtr)#
+R1(config-rtr)# |  router-id 1.1.1.1
+    router-id 1.1.1.1
+    R1(config-rtr)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R1(config-if)#
+R1(config-if)# |  ip address 10.255.0.1 255.255.255.255
+    ip address 10.255.0.1 255.255.255.255
+    R1(config-if)#
+R1(config-if)# |  ipv6 address 2001:db8:ffff::1/128
+    ipv6 address 2001:db8:ffff::1/128
+    R1(config-if)#
+R1(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R1(config-if)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R1(config-if)#
+R1(config-if)# |  description BACKBONE-LAN
+    description BACKBONE-LAN
+    R1(config-if)#
+R1(config-if)# |  ip ospf priority 100
+    ip ospf priority 100
+    R1(config-if)#
+R1(config-if)# |  ip address 10.0.0.1 255.255.255.0
+    ip address 10.0.0.1 255.255.255.0
+    R1(config-if)#
+R1(config-if)# |  ipv6 address 2001:db8::1/64
+    ipv6 address 2001:db8::1/64
+    R1(config-if)#
+R1(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R1(config-if)#
+R1(config-if)# |  no shutdown
+    no shutdown
+    
+    R1(config-if)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1(config-if)# | interface GigabitEthernet0/1
+    interface GigabitEthernet0/1
+    R1(config-if)#
+R1(config-if)# |  description TO-ISP
+    description TO-ISP
+    R1(config-if)#
+R1(config-if)# |  ip address 198.51.100.1 255.255.255.252
+    ip address 198.51.100.1 255.255.255.252
+    R1(config-if)#
+R1(config-if)# |  no shutdown
+    no shutdown
+    
+    R1(config-if)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1(config-if)# | interface GigabitEthernet0/2
+    interface GigabitEthernet0/2
+    R1(config-if)#
+R1(config-if)# |  description TO-R2-DIRECT
+    description TO-R2-DIRECT
+    R1(config-if)#
+R1(config-if)# |  ip address 10.0.12.1 255.255.255.252
+    ip address 10.0.12.1 255.255.255.252
+    R1(config-if)#
+R1(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R1(config-if)#
+R1(config-if)# |  no shutdown
+    no shutdown
+    
+    R1(config-if)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1(config)# | ip route 0.0.0.0 0.0.0.0 198.51.100.2
+    ip route 0.0.0.0 0.0.0.0 198.51.100.2
+    R1(config)#
+R1(config)# | ip route 203.0.113.0 255.255.255.0 198.51.100.2
+    ip route 203.0.113.0 255.255.255.0 198.51.100.2
+    R1(config)#
+R1(config-router)# | router ospf 1
+    router ospf 1
+    R1(config-router)#
+R1(config-router)# |  router-id 1.1.1.1
+    router-id 1.1.1.1
+    R1(config-router)#
+R1(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R1(config-router)#
+R1(config-router)# |  auto-cost reference-bandwidth 10000
+    auto-cost reference-bandwidth 10000
+    % OSPF: Reference bandwidth is changed.
+            Please ensure reference bandwidth is consistent across all routers.
+    R1(config-router)#
+R1(config-router)# |  network 10.0.0.0 0.0.0.255 area 0
+    network 10.0.0.0 0.0.0.255 area 0
+    R1(config-router)#
+R1(config-router)# |  network 10.0.12.0 0.0.0.3 area 0
+    network 10.0.12.0 0.0.0.3 area 0
+    R1(config-router)#
+R1(config-router)# |  network 10.255.0.1 0.0.0.0 area 0
+    network 10.255.0.1 0.0.0.0 area 0
+    R1(config-router)#
+R1(config-router)# |  default-information originate
+    default-information originate
+    R1(config-router)#
+R1(config-router)# |  redistribute static metric 20 metric-type 1 subnets
+    redistribute static metric 20 metric-type 1 subnets
+    R1(config-router)#
+R1(config)# |  exit
+    exit
+    R1(config)#
+R1# | end
+    end
+    R1#
+R1# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R1#

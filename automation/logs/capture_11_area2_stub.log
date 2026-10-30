@@ -1,0 +1,6 @@
+capture 11_area2_stub at 2026-10-30T16:22:33.062Z
+evidence/11_area2_stub/R6__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/11_area2_stub/R6__show_ip_ospf_database.txt  (2031 chars)
+evidence/11_area2_stub/R6__show_ip_route.txt  (2299 chars)
+evidence/11_area2_stub/R6__show_ip_ospf_database_summary_0_0_0_0.txt  (118 chars)
+evidence/11_area2_stub/R3__show_ip_ospf.txt  (1432 chars)

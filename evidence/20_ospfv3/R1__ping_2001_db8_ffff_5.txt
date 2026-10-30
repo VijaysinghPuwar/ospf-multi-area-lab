@@ -1,0 +1,5 @@
+# R1# ping 2001:db8:ffff::5   (captured 2026-10-30T16:34:52.084Z)
+ping 2001:db8:ffff::5
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2001:db8:ffff::5, timeout is 2 seconds:

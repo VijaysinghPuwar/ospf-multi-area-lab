@@ -1,0 +1,6 @@
+# R1# show ip ospf database router 2.2.2.2   (captured 2026-10-30T16:19:39.877Z)
+show ip ospf database router 2.2.2.2
+                                ^
+% Invalid input detected at '^' marker.
+	
+R1#

@@ -1,0 +1,40 @@
+# R6# show ip ospf database   (captured 2026-10-30T16:20:59.125Z)
+show ip ospf database
+            OSPF Router with ID (6.6.6.6) (Process ID 1)
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+6.6.6.6         6.6.6.6         77          0x80000006 0x0038ae 4
+3.3.3.3         3.3.3.3         77          0x80000005 0x00f8a6 2
+
+                Summary Net Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.255.0.3      3.3.3.3         588         0x80000002 0x0096ad
+10.0.0.0        3.3.3.3         62          0x8000002d 0x004078
+10.255.0.4      3.3.3.3         62          0x8000002f 0x001e93
+10.255.0.2      3.3.3.3         62          0x80000031 0x002e83
+10.255.0.1      3.3.3.3         62          0x80000032 0x00367b
+10.3.47.0       3.3.3.3         62          0x80000033 0x005b1e
+10.3.1.0        3.3.3.3         62          0x80000034 0x007131
+10.255.0.7      3.3.3.3         62          0x80000035 0x005846
+10.1.25.0       3.3.3.3         62          0x80000036 0x00602e
+10.1.10.0       3.3.3.3         62          0x80000037 0x000233
+10.1.1.0        3.3.3.3         62          0x80000038 0x00811f
+10.1.2.0        3.3.3.3         62          0x80000039 0x00742a
+10.255.0.5      3.3.3.3         62          0x8000003b 0x00603a
+10.0.12.0       3.3.3.3         15          0x8000003e 0x00eba8
+10.1.3.0        3.3.3.3         5           0x8000003f 0x005d3a
+
+                Summary ASB Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         3.3.3.3         62          0x8000002e 0x008438
+7.7.7.7         3.3.3.3         62          0x8000003c 0x00cc24
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         603         0x80000001 0x00fecf 1
+172.16.0.0      7.7.7.7         603         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         602         0x80000001 0x006680 0
+203.0.113.0     1.1.1.1         193         0x80000002 0x00ed11 0
+R6#

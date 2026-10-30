@@ -1,0 +1,27 @@
+# step 11b_area2_stub_clean applied 2026-10-30T16:23:13.217Z
+R3(config)# router ospf 1
+   router ospf 1
+   R3(config-router)#
+R3(config)# no area 2 stub no-summary
+   no area 2 stub no-summary
+   R3(config-router)#
+R3# show running-config | section router ospf
+   show running-config | section router ospf
+   router ospf 1
+    router-id 3.3.3.3
+    log-adjacency-changes detail
+    auto-cost reference-bandwidth 10000
+    network 10.0.0.0 0.0.0.255 area 0
+    network 10.255.0.3 0.0.0.0 area 0
+    network 10.2.36.0 0.0.0.3 area 2
+   ipv6 router ospf 1
+    router-id 3.3.3.3
+    log-adjacency-changes
+   R3#
+R3# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R6# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+rejected=0

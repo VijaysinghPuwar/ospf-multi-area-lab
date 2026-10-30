@@ -1,0 +1,20 @@
+# R3# show ip ospf interface GigabitEthernet0/0   (captured 2026-10-30T16:18:33.494Z)
+show ip ospf interface GigabitEthernet0/0
+
+GigabitEthernet0/0 is up, line protocol is up
+  Internet address is 10.0.0.3/24, Area 0
+  Process ID 1, Router ID 3.3.3.3, Network Type BROADCAST, Cost: 1
+  Transmit Delay is 1 sec, State DROTHER, Priority 1
+  Designated Router (ID) 1.1.1.1, Interface address 10.0.0.1
+  Backup Designated Router (ID) 4.4.4.4, Interface address 10.0.0.4
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:08
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 3, Adjacent neighbor count is 2
+    Adjacent with neighbor 1.1.1.1  (Designated Router)
+    Adjacent with neighbor 4.4.4.4  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+R3#

@@ -1,0 +1,12 @@
+# R1# show ip route 10.1.10.0   (captured 2026-10-30T16:19:39.877Z)
+show ip route 10.1.10.0
+Routing entry for 10.1.10.0/24
+Known via "ospf 1", distance 110, metric 3, type intra area
+  Last update from 10.0.12.2 on GigabitEthernet0/2, 00:03:06 ago
+  Routing Descriptor Blocks:
+  * 10.0.12.2, from 2.2.2.2, 00:03:06 ago, via GigabitEthernet0/2
+      Route metric is 3, traffic share count is 1
+    10.0.0.2, from 2.2.2.2, 00:03:06 ago, via GigabitEthernet0/0
+      Route metric is 3, traffic share count is 1
+
+R1#

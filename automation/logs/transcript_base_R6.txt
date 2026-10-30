@@ -1,0 +1,87 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R6(config)# | hostname R6
+    hostname R6
+    R6(config)#
+R6(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R6(config)#
+R6(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R6(config-if)#
+R6(config-if)# |  ip address 10.255.0.6 255.255.255.255
+    ip address 10.255.0.6 255.255.255.255
+    R6(config-if)#
+R6(config)# |  exit
+    exit
+    R6(config)#
+R6(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R6(config-if)#
+R6(config-if)# |  description TO-R3-AREA2
+    description TO-R3-AREA2
+    R6(config-if)#
+R6(config-if)# |  ip address 10.2.36.2 255.255.255.252
+    ip address 10.2.36.2 255.255.255.252
+    R6(config-if)#
+R6(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R6(config-if)#
+R6(config-if)# |  no shutdown
+    no shutdown
+    
+    R6(config-if)#
+R6(config)# |  exit
+    exit
+    R6(config)#
+R6(config-if)# | interface GigabitEthernet0/1
+    interface GigabitEthernet0/1
+    R6(config-if)#
+R6(config-if)# |  description PC-B-LAN
+    description PC-B-LAN
+    R6(config-if)#
+R6(config-if)# |  ip address 10.2.10.1 255.255.255.0
+    ip address 10.2.10.1 255.255.255.0
+    R6(config-if)#
+R6(config-if)# |  no shutdown
+    no shutdown
+    
+    R6(config-if)#
+R6(config)# |  exit
+    exit
+    R6(config)#
+R6(config-router)# | router ospf 1
+    router ospf 1
+    R6(config-router)#
+R6(config-router)# |  router-id 6.6.6.6
+    router-id 6.6.6.6
+    R6(config-router)#
+R6(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R6(config-router)#
+R6(config-router)# |  passive-interface GigabitEthernet0/1
+    passive-interface GigabitEthernet0/1
+    R6(config-router)#
+R6(config-router)# |  network 10.2.0.0 0.0.255.255 area 2
+    network 10.2.0.0 0.0.255.255 area 2
+    R6(config-router)#
+R6(config-router)# |  network 10.255.0.6 0.0.0.0 area 2
+    network 10.255.0.6 0.0.0.0 area 2
+    R6(config-router)#
+R6(config)# |  exit
+    exit
+    R6(config)#
+R6# | end
+    end
+    R6#
+R6# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R6#

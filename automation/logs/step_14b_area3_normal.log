@@ -1,0 +1,43 @@
+# step 14b_area3_normal applied 2026-10-30T16:27:10.311Z
+R4(config)# router ospf 1
+   router ospf 1
+   R4(config-router)#
+R4(config)# no area 3 nssa
+   no area 3 nssa
+   R4(config-router)#
+R7(config)# router ospf 1
+   router ospf 1
+   R7(config-router)#
+R7(config)# no area 3 nssa
+   no area 3 nssa
+   R7(config-router)#
+R4# show running-config | section router ospf 1
+   show running-config | section router ospf 1
+   router ospf 1
+    router-id 4.4.4.4
+    log-adjacency-changes detail
+    auto-cost reference-bandwidth 10000
+    network 10.0.0.0 0.0.0.255 area 0
+    network 10.255.0.4 0.0.0.0 area 0
+    network 10.3.47.0 0.0.0.3 area 3
+   ipv6 router ospf 1
+    router-id 4.4.4.4
+    log-adjacency-changes
+   R4#
+R4# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R7# show running-config | section router ospf 1
+   show running-config | section router ospf 1
+   router ospf 1
+    router-id 7.7.7.7
+    log-adjacency-changes detail
+    redistribute static subnets 
+    auto-cost reference-bandwidth 10000
+    network 10.3.0.0 0.0.255.255 area 3
+    network 10.255.0.7 0.0.0.0 area 3
+   R7#
+R7# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+rejected=0

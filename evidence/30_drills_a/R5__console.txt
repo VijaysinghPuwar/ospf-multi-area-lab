@@ -1,0 +1,117 @@
+# R5 console buffer at 2026-10-30T16:36:46.664Z
+
+2.2.2.2           0   FULL/  -        00:00:37    10.1.25.1       OSPF_VL0
+R5#show ip ospf
+ Routing Process "ospf 1" with ID 5.5.5.5
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ It is an area border router
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 4. Checksum Sum 0x02c5d5
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 3. 3 normal 0 stub 0 nssa
+ External flood list length 0
+    Area 1
+        Number of interfaces in this area is 6
+        Area has no authentication
+        SPF algorithm executed 9 times
+        Area ranges are
+        Number of LSA 27. Checksum Sum 0x0ecafe
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+    Area 4
+        Number of interfaces in this area is 1
+        Area has no authentication
+        SPF algorithm executed 8 times
+        Area ranges are
+        Number of LSA 22. Checksum Sum 0x0b3a54
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R5#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R5(config)#router ospf 1
+R5(config-router)#area 1 range 10.1.0.0 255.255.0.0
+R5(config-router)#end
+R5#
+%SYS-5-CONFIG_I: Configured from console by console
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip route 10.1.0.0 255.255.0.0
+% Network not in table
+
+R5#
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+8.8.8.8           0   FULL/  -        00:00:36    10.4.58.2       GigabitEthernet0/1
+2.2.2.2           0   FULL/  -        00:00:34    10.1.25.1       OSPF_VL0
+R5#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R5(config)#interface GigabitEthernet0/0
+R5(config-if)#ip ospf authentication message-digest
+R5(config-if)#ip ospf message-digest-key 1 md5 OspfLab1
+R5(config-if)#end
+R5#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ipv6 ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Interface ID    Interface
+2.2.2.2           1   FULL/BDR        00:00:35    2               GigabitEthernet0/0
+R5#show ipv6 route ospf
+IPv6 Routing Table - 11 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route, M - MIPv6
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       D - EIGRP, EX - EIGRP external
+OI  2001:DB8::/64 [110/2]
+     via FE80::20C:85FF:FEA8:7202, GigabitEthernet0/0
+OI  2001:DB8:FFFF::1/128 [110/2]
+     via FE80::20C:85FF:FEA8:7202, GigabitEthernet0/0
+OI  2001:DB8:FFFF::2/128 [110/1]
+     via FE80::20C:85FF:FEA8:7202, GigabitEthernet0/0
+OI  2001:DB8:FFFF::3/128 [110/2]
+     via FE80::20C:85FF:FEA8:7202, GigabitEthernet0/0
+OI  2001:DB8:FFFF::4/128 [110/2]
+     via FE80::20C:85FF:FEA8:7202, GigabitEthernet0/0
+R5#
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Interface down or detached

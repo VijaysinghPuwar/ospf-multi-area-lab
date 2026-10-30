@@ -1,0 +1,6 @@
+# R4# show ip ospf database external 172.16.0.0   (captured 2026-10-30T16:43:44.912Z)
+show ip ospf database external 172.16.0.0
+                                  ^
+% Invalid input detected at '^' marker.
+	
+R4#

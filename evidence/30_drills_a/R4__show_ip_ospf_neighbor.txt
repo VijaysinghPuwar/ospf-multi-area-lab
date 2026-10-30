@@ -1,0 +1,7 @@
+# R4# show ip ospf neighbor   (captured 2026-10-30T16:36:46.664Z)
+show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+7.7.7.7           0   FULL/  -        00:00:33    10.3.47.2       GigabitEthernet0/1
+R4#

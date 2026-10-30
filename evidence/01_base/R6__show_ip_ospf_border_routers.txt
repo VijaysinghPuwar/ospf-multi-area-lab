@@ -1,0 +1,8 @@
+# R6# show ip ospf border-routers   (captured 2026-10-30T16:13:03.012Z)
+show ip ospf border-routers
+OSPF Process 1 internal Routing Table
+
+Codes: i - Intra-area route, I - Inter-area route
+
+i 3.3.3.3 [1] via 10.2.36.1, GigabitEthernet0/0, ABR, Area 2, SPF 1
+R6#

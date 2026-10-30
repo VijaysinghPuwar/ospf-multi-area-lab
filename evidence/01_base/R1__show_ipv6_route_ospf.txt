@@ -1,0 +1,20 @@
+# R1# show ipv6 route ospf   (captured 2026-10-30T16:13:03.012Z)
+show ipv6 route ospf
+IPv6 Routing Table - 9 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route, M - MIPv6
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       D - EIGRP, EX - EIGRP external
+OI  2001:DB8:1:10::/64 [110/3]
+     via ::
+OI  2001:DB8:1:25::/64 [110/2]
+     via ::
+O   2001:DB8:FFFF::2/128 [110/1]
+     via ::
+O   2001:DB8:FFFF::3/128 [110/1]
+     via FE80::2E0:F9FF:FE80:2701, GigabitEthernet0/0
+O   2001:DB8:FFFF::4/128 [110/1]
+     via FE80::201:42FF:FE65:EB01, GigabitEthernet0/0
+R1#

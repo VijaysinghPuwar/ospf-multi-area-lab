@@ -1,0 +1,46 @@
+# PC-B console buffer at 2026-10-30T16:50:37.985Z
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping 203.0.113.1
+
+Pinging 203.0.113.1 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Reply from 203.0.113.1: bytes=32 time<1ms TTL=252
+Reply from 203.0.113.1: bytes=32 time<1ms TTL=252
+
+Ping statistics for 203.0.113.1:
+    Packets: Sent = 4, Received = 2, Lost = 2 (50% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 203.0.113.1
+
+Pinging 203.0.113.1 with 32 bytes of data:
+
+Reply from 203.0.113.1: bytes=32 time<1ms TTL=252
+Reply from 203.0.113.1: bytes=32 time<1ms TTL=252
+Reply from 203.0.113.1: bytes=32 time=1ms TTL=252
+Reply from 203.0.113.1: bytes=32 time<1ms TTL=252
+
+Ping statistics for 203.0.113.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\>ping 10.4.1.1
+
+Pinging 10.4.1.1 with 32 bytes of data:
+
+Request timed out.
+Reply from 10.4.1.1: bytes=32 time<1ms TTL=251
+Reply from 10.4.1.1: bytes=32 time<1ms TTL=251
+Reply from 10.4.1.1: bytes=32 time<1ms TTL=251
+
+Ping statistics for 10.4.1.1:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>

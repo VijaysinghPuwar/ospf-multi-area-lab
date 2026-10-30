@@ -1,0 +1,40 @@
+# step 31_drills_a_restored applied 2026-10-30T16:36:46.682Z
+R6(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R6(config-if)#
+R6(config)# no ip ospf hello-interval
+   no ip ospf hello-interval
+   R6(config-if)#
+R6(config)# no ip ospf dead-interval
+   no ip ospf dead-interval
+   R6(config-if)#
+R8(config)# router ospf 1
+   router ospf 1
+   R8(config-router)#
+R8(config)# no network 10.4.0.0 0.0.255.255 area 40
+   no network 10.4.0.0 0.0.255.255 area 40
+   R8(config-router)#
+R8(config)# network 10.4.0.0 0.0.255.255 area 4
+   network 10.4.0.0 0.0.255.255 area 4
+   R8(config-router)#
+R2(config)# interface GigabitEthernet0/2
+   interface GigabitEthernet0/2
+   R2(config-if)#
+R2(config)# no ip mtu
+   no ip mtu
+   R2(config-if)#
+R2(config)# shutdown
+   shutdown
+   
+   R2(config-if)#
+R2(config)# no shutdown
+   no shutdown
+   
+   R2(config-if)#
+R4(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R4(config-if)#
+R4(config)# ip address 10.0.0.4 255.255.255.0
+   ip address 10.0.0.4 255.255.255.0
+   R4(config-if)#
+rejected=0

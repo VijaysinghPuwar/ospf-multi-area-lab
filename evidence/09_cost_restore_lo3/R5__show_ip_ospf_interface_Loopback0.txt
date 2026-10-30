@@ -1,0 +1,8 @@
+# R5# show ip ospf interface Loopback0   (captured 2026-10-30T16:20:59.125Z)
+show ip ospf interface Loopback0
+
+Loopback0 is up, line protocol is up
+  Internet address is 10.255.0.5/32, Area 1
+  Process ID 1, Router ID 5.5.5.5, Network Type LOOPBACK, Cost: 1
+  Loopback interface is treated as a stub Host
+R5#

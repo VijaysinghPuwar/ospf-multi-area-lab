@@ -1,0 +1,19 @@
+# R1# show ip route ospf   (captured 2026-10-30T16:28:09.362Z)
+show ip route ospf
+     10.0.0.0/8 is variably subnetted, 16 subnets, 4 masks
+O IA    10.1.0.0 [110/20] via 10.0.12.2, 00:01:10, GigabitEthernet0/2
+O IA    10.2.10.0 [110/210] via 10.0.0.3, 00:04:34, GigabitEthernet0/0
+O IA    10.2.36.0 [110/110] via 10.0.0.3, 00:04:34, GigabitEthernet0/0
+O IA    10.3.1.0 [110/111] via 10.0.0.4, 00:03:06, GigabitEthernet0/0
+O IA    10.3.47.0 [110/110] via 10.0.0.4, 00:03:06, GigabitEthernet0/0
+O       10.255.0.2 [110/11] via 10.0.12.2, 00:07:16, GigabitEthernet0/2
+O       10.255.0.3 [110/101] via 10.0.0.3, 00:04:34, GigabitEthernet0/0
+O       10.255.0.4 [110/101] via 10.0.0.4, 00:03:06, GigabitEthernet0/0
+O IA    10.255.0.5 [110/21] via 10.0.12.2, 00:07:16, GigabitEthernet0/2
+O IA    10.255.0.6 [110/111] via 10.0.0.3, 00:04:34, GigabitEthernet0/0
+O IA    10.255.0.7 [110/111] via 10.0.0.4, 00:03:06, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0 [110/20] via 10.0.12.2, 00:07:16, GigabitEthernet0/2
+O E2    172.16.1.0 [110/20] via 10.0.12.2, 00:07:16, GigabitEthernet0/2
+
+R1#

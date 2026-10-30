@@ -1,0 +1,147 @@
+# R2 console buffer at 2026-10-30T16:33:59.856Z
+
+4.4.4.4         4.4.4.4         79          0x80000005 0x004e46 2
+
+                Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.1        1.1.1.1         79          0x80000003 0x009684
+
+                Summary Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.1.0.0        2.2.2.2         104         0x80000002 0x002120
+10.255.0.5      2.2.2.2         99          0x80000008 0x00f83d
+10.2.36.0       3.3.3.3         104         0x80000001 0x0059c2
+10.2.10.0       3.3.3.3         99          0x80000002 0x007459
+10.255.0.6      3.3.3.3         99          0x80000003 0x00da5b
+10.3.47.0       4.4.4.4         104         0x80000001 0x00b556
+10.3.1.0        4.4.4.4         99          0x80000003 0x00c96a
+10.255.0.7      4.4.4.4         99          0x80000004 0x00b07f
+
+                Summary ASB Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+7.7.7.7         4.4.4.4         99          0x80000002 0x002205
+
+                Router Link States (Area 1)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+2.2.2.2         2.2.2.2         109         0x80000003 0x008f36 2
+5.5.5.5         5.5.5.5         109         0x80000008 0x00129e 7
+
+                Summary Net Link States (Area 1)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.0        2.2.2.2         104         0x80000002 0x00b433
+10.0.12.0       2.2.2.2         104         0x80000003 0x0094a3
+10.255.0.2      2.2.2.2         104         0x80000004 0x00ba8c
+10.255.0.1      2.2.2.2         104         0x80000005 0x002716
+10.255.0.3      2.2.2.2         69          0x80000007 0x009648
+10.2.36.0       2.2.2.2         69          0x80000008 0x00555f
+10.2.10.0       2.2.2.2         69          0x80000009 0x0070f5
+10.255.0.6      2.2.2.2         69          0x8000000a 0x00d6f7
+10.255.0.4      2.2.2.2         59          0x8000000b 0x008455
+10.3.47.0       2.2.2.2         59          0x8000000c 0x00c7dc
+10.3.1.0        2.2.2.2         59          0x8000000d 0x00ddef
+10.255.0.7      2.2.2.2         59          0x8000000e 0x00c405
+
+                Summary ASB Link States (Area 1)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         2.2.2.2         104         0x80000001 0x0075d2
+7.7.7.7         2.2.2.2         79          0x80000006 0x0056d4
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         119         0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         118         0x80000001 0x00ef10 0
+172.16.0.0      7.7.7.7         119         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         118         0x80000001 0x006680 0
+R2#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 10.0.12.1 to network 0.0.0.0
+
+     10.0.0.0/8 is variably subnetted, 21 subnets, 3 masks
+C       10.0.0.0/24 is directly connected, GigabitEthernet0/0
+L       10.0.0.2/32 is directly connected, GigabitEthernet0/0
+C       10.0.12.0/30 is directly connected, GigabitEthernet0/2
+L       10.0.12.2/32 is directly connected, GigabitEthernet0/2
+O       10.1.1.0/24 [110/11] via 10.1.25.2, 00:01:38, GigabitEthernet0/1
+O       10.1.2.0/24 [110/11] via 10.1.25.2, 00:01:38, GigabitEthernet0/1
+O       10.1.3.0/24 [110/11] via 10.1.25.2, 00:01:38, GigabitEthernet0/1
+O       10.1.10.0/24 [110/110] via 10.1.25.2, 00:01:38, GigabitEthernet0/1
+C       10.1.25.0/30 is directly connected, GigabitEthernet0/1
+L       10.1.25.1/32 is directly connected, GigabitEthernet0/1
+O IA    10.2.10.0/24 [110/210] via 10.0.0.3, 00:01:08, GigabitEthernet0/0
+O IA    10.2.36.0/30 [110/110] via 10.0.0.3, 00:01:08, GigabitEthernet0/0
+O IA    10.3.1.0/24 [110/111] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O IA    10.3.47.0/30 [110/110] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O       10.255.0.1/32 [110/11] via 10.0.12.1, 00:01:43, GigabitEthernet0/2
+C       10.255.0.2/32 is directly connected, Loopback0
+O       10.255.0.3/32 [110/101] via 10.0.0.3, 00:01:08, GigabitEthernet0/0
+O       10.255.0.4/32 [110/101] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O       10.255.0.5/32 [110/11] via 10.1.25.2, 00:01:38, GigabitEthernet0/1
+O IA    10.255.0.6/32 [110/111] via 10.0.0.3, 00:01:08, GigabitEthernet0/0
+O IA    10.255.0.7/32 [110/111] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0/24 [110/20] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O E2    172.16.1.0/24 [110/20] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O E1 203.0.113.0/24 [110/30] via 10.0.12.1, 00:01:43, GigabitEthernet0/2
+O*E2 0.0.0.0/0 [110/1] via 10.0.12.1, 00:01:43, GigabitEthernet0/2
+
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#router ospf 1
+R2(config-router)#area 1 virtual-link 5.5.5.5
+R2(config-router)#end
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on OSPF_VL0 from 2WAY to EXSTART, AdjOK?
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on OSPF_VL0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on OSPF_VL0 from EXCHANGE to LOADING, Exchange Done
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on OSPF_VL0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ip ospf virtual-links
+Virtual Link OSPF_VL0 to router 5.5.5.5 is up
+  Run as demand circuit
+  Transit area 1, via interface GigabitEthernet0/1, Cost of using 10
+  Transmit Delay is 1 sec, State POINT_TO_POINT,
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:07
+    Adjacency State FULL
+    Index 1/2, retransmission queue length 0, number of retransmission 0
+        First 0x0(0)/0x0(0) Next 0x0(0)/0x0(0)
+        Last retransmission scan length is 0, maximum is 0
+        Last retransmission scan time is 0 msec, maximum is 0 msec
+R2#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+5.5.5.5           0   FULL/  -        00:00:37    10.1.25.2       OSPF_VL0
+1.1.1.1           0   FULL/  -        00:00:39    10.0.12.1       GigabitEthernet0/2
+1.1.1.1         100   FULL/DR         00:00:39    10.0.0.1        GigabitEthernet0/0
+3.3.3.3           0   FULL/DROTHER    00:00:39    10.0.0.3        GigabitEthernet0/0
+4.4.4.4           0   FULL/DROTHER    00:00:39    10.0.0.4        GigabitEthernet0/0
+5.5.5.5           0   FULL/  -        00:00:39    10.1.25.2       GigabitEthernet0/1
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface GigabitEthernet0/1
+R2(config-if)#ip ospf authentication message-digest
+R2(config-if)#ip ospf message-digest-key 1 md5 OspfLab1
+R2(config-if)#end
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Interface down or detached

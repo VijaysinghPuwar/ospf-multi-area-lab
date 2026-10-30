@@ -1,0 +1,207 @@
+# R5 console buffer at 2026-10-30T16:34:40.891Z
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback3, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+00:00:00: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:00:00: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from DOWN to INIT, Received Hello
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from INIT to 2WAY, 2-Way Received
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from 2WAY to EXSTART, AdjOK?
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from EXSTART to EXCHANGE, Negotiation Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from EXCHANGE to LOADING, Exchange Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:40: %OSPFv3-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           0   FULL/  -        00:00:31    10.1.25.1       GigabitEthernet0/0
+8.8.8.8           0   FULL/  -        00:00:31    10.4.58.2       GigabitEthernet0/1
+R5#show ip route ospf
+     10.0.0.0/8 is variably subnetted, 27 subnets, 3 masks
+O IA    10.0.0.0 [110/110] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+O IA    10.0.12.0 [110/20] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+O IA    10.2.10.0 [110/220] via 10.1.25.1, 00:01:03, GigabitEthernet0/0
+O IA    10.2.36.0 [110/120] via 10.1.25.1, 00:01:03, GigabitEthernet0/0
+O IA    10.3.1.0 [110/121] via 10.1.25.1, 00:00:53, GigabitEthernet0/0
+O IA    10.3.47.0 [110/120] via 10.1.25.1, 00:00:53, GigabitEthernet0/0
+O       10.4.1.0 [110/11] via 10.4.58.2, 00:01:43, GigabitEthernet0/1
+O IA    10.255.0.1 [110/21] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+O IA    10.255.0.2 [110/11] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+O IA    10.255.0.3 [110/111] via 10.1.25.1, 00:01:03, GigabitEthernet0/0
+O IA    10.255.0.4 [110/111] via 10.1.25.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.6 [110/121] via 10.1.25.1, 00:01:03, GigabitEthernet0/0
+O IA    10.255.0.7 [110/121] via 10.1.25.1, 00:00:53, GigabitEthernet0/0
+O       10.255.0.8 [110/11] via 10.4.58.2, 00:01:43, GigabitEthernet0/1
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0 [110/20] via 10.1.25.1, 00:01:13, GigabitEthernet0/0
+O E2    172.16.1.0 [110/20] via 10.1.25.1, 00:01:13, GigabitEthernet0/0
+O E1 203.0.113.0 [110/40] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.1.25.1, 00:01:38, GigabitEthernet0/0
+
+R5#show ip ospf interface brief
+Interface     PID   Area                     IP Address/Mask          Cost  State  Nbrs F/C
+Gig0/0          1   1                      10.1.25.2/255.255.255.252   10   POINT  0/0
+Gig0/2          1   1                        10.1.10.1/255.255.255.0   100     DR  0/0
+Lo1             1   1                         10.1.1.1/255.255.255.0   1    POINT  0/0
+Lo2             1   1                         10.1.2.1/255.255.255.0   1    POINT  0/0
+Lo3             1   1                         10.1.3.1/255.255.255.0   1    POINT  0/0
+Lo0             1   1                     10.255.0.5/255.255.255.255   1     WAIT  0/0
+Gig0/1          1   4                      10.4.58.1/255.255.255.252   10   POINT  0/0
+
+R5#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R5(config)#router ospf 1
+R5(config-router)#area 1 virtual-link 2.2.2.2
+R5(config-router)#end
+R5#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on OSPF_VL0 from 2WAY to EXSTART, AdjOK?
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on OSPF_VL0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on OSPF_VL0 from EXCHANGE to LOADING, Exchange Done
+
+00:02:47: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on OSPF_VL0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip ospf virtual-links
+Virtual Link OSPF_VL0 to router 2.2.2.2 is up
+  Run as demand circuit
+  Transit area 1, via interface GigabitEthernet0/0, Cost of using 10
+  Transmit Delay is 1 sec, State POINT_TO_POINT,
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:07
+    Adjacency State FULL
+    Index 1/2, retransmission queue length 0, number of retransmission 0
+        First 0x0(0)/0x0(0) Next 0x0(0)/0x0(0)
+        Last retransmission scan length is 0, maximum is 0
+        Last retransmission scan time is 0 msec, maximum is 0 msec
+R5#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           0   FULL/  -        00:00:39    10.1.25.1       GigabitEthernet0/0
+8.8.8.8           0   FULL/  -        00:00:39    10.4.58.2       GigabitEthernet0/1
+2.2.2.2           0   FULL/  -        00:00:37    10.1.25.1       OSPF_VL0
+R5#show ip ospf
+ Routing Process "ospf 1" with ID 5.5.5.5
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ It is an area border router
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 4. Checksum Sum 0x02c5d5
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 3. 3 normal 0 stub 0 nssa
+ External flood list length 0
+    Area 1
+        Number of interfaces in this area is 6
+        Area has no authentication
+        SPF algorithm executed 9 times
+        Area ranges are
+        Number of LSA 27. Checksum Sum 0x0ecafe
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+    Area 4
+        Number of interfaces in this area is 1
+        Area has no authentication
+        SPF algorithm executed 8 times
+        Area ranges are
+        Number of LSA 22. Checksum Sum 0x0b3a54
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R5#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R5(config)#router ospf 1
+R5(config-router)#area 1 range 10.1.0.0 255.255.0.0
+R5(config-router)#end
+R5#
+%SYS-5-CONFIG_I: Configured from console by console
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip route 10.1.0.0 255.255.0.0
+% Network not in table
+
+R5#
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:04:10: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R5#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+8.8.8.8           0   FULL/  -        00:00:36    10.4.58.2       GigabitEthernet0/1
+2.2.2.2           0   FULL/  -        00:00:34    10.1.25.1       OSPF_VL0
+R5#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R5(config)#interface GigabitEthernet0/0
+R5(config-if)#ip ospf authentication message-digest
+R5(config-if)#ip ospf message-digest-key 1 md5 OspfLab1
+R5(config-if)#end
+R5#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:04:50: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done

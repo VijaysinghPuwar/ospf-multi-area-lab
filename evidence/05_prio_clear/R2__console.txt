@@ -1,0 +1,145 @@
+# R2 console buffer at 2026-10-30T16:18:33.494Z
+
+4.4.4.4           1   FULL/DR         00:00:31    1               GigabitEthernet0/0
+5.5.5.5           1   FULL/DR         00:00:31    1               GigabitEthernet0/1
+R2#
+00:05:39: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:05:39: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:05:39: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:05:39: %OSPFv3-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:05:39: %OSPFv3-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:05:39: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:05:44: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:05:44: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:05:44: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:39    10.0.0.1        GigabitEthernet0/0
+3.3.3.3           1   FULL/DR         00:00:39    10.0.0.3        GigabitEthernet0/0
+1.1.1.1           0   FULL/  -        00:00:39    10.0.12.1       GigabitEthernet0/2
+5.5.5.5           0   FULL/  -        00:00:39    10.1.25.2       GigabitEthernet0/1
+R2#
+00:06:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:06:09: %OSPFv3-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:06:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:06:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:06:14: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:06:14: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:06:14: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:39    10.0.0.1        GigabitEthernet0/0
+3.3.3.3           1   FULL/DR         00:00:39    10.0.0.3        GigabitEthernet0/0
+4.4.4.4           1   FULL/DROTHER    00:00:30    10.0.0.4        GigabitEthernet0/0
+1.1.1.1           0   FULL/  -        00:00:39    10.0.12.1       GigabitEthernet0/2
+5.5.5.5           0   FULL/  -        00:00:39    10.1.25.2       GigabitEthernet0/1
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface GigabitEthernet0/0
+R2(config-if)#ip ospf priority 50
+R2(config-if)#end
+R2#clear ip ospf process
+Reset ALL OSPF processes? [no]: yes
+
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:06:59: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from DOWN to INIT, Received Hello
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from 2WAY to EXSTART, AdjOK?
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXCHANGE to FULL, Exchange Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from LOADING to FULL, Loading Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from DOWN to INIT, Received Hello
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from INIT to 2WAY, 2-Way Received
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from 2WAY to EXSTART, AdjOK?
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from EXCHANGE to LOADING, Exchange Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:07:09: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:07:19: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:07:19: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:19: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:19: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:07:19: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done

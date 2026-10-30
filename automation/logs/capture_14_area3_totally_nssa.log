@@ -1,0 +1,5 @@
+capture 14_area3_totally_nssa at 2026-10-30T16:26:52.137Z
+evidence/14_area3_totally_nssa/R7__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/14_area3_totally_nssa/R7__show_ip_ospf_database.txt  (513 chars)
+evidence/14_area3_totally_nssa/R7__show_ip_route.txt  (1293 chars)
+evidence/14_area3_totally_nssa/R1__show_ip_route_ospf.txt  (1337 chars)

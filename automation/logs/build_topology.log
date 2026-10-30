@@ -1,0 +1,44 @@
+removed ISP
+removed Power Distribution Device2
+removed R1
+removed SW-BB
+removed R2
+removed R3
+removed R4
+removed R5
+removed R8
+removed PC-A
+removed R6
+removed PC-B
+removed R7
+removed PARTNER
+device ISP (2911) <- Router21
+device R1 (2911) <- Router22
+device SW-BB (2960-24TT) <- Switch2
+device R2 (2911) <- Router23
+device R3 (2911) <- Router24
+device R4 (2911) <- Router25
+device R5 (2911) <- Router26
+device R8 (2911) <- Router27
+device PC-A (PC-PT) <- PC4
+device R6 (2911) <- Router28
+device PC-B (PC-PT) <- PC5
+device R7 (2911) <- Router29
+device PARTNER (2911) <- Router30
+link L1 R1 GigabitEthernet0/0 <-> SW-BB FastEthernet0/1 => true
+link L2 R2 GigabitEthernet0/0 <-> SW-BB FastEthernet0/2 => true
+link L3 R3 GigabitEthernet0/0 <-> SW-BB FastEthernet0/3 => true
+link L4 R4 GigabitEthernet0/0 <-> SW-BB FastEthernet0/4 => true
+link L5 R1 GigabitEthernet0/2 <-> R2 GigabitEthernet0/2 => true
+link L6 R1 GigabitEthernet0/1 <-> ISP GigabitEthernet0/0 => true
+link L7 R2 GigabitEthernet0/1 <-> R5 GigabitEthernet0/0 => true
+link L8 R5 GigabitEthernet0/1 <-> R8 GigabitEthernet0/0 => true
+link L9 R5 GigabitEthernet0/2 <-> PC-A FastEthernet0 => true
+link L10 R3 GigabitEthernet0/1 <-> R6 GigabitEthernet0/0 => true
+link L11 R6 GigabitEthernet0/1 <-> PC-B FastEthernet0 => true
+link L12 R4 GigabitEthernet0/1 <-> R7 GigabitEthernet0/0 => true
+link L13 R7 GigabitEthernet0/1 <-> PARTNER GigabitEthernet0/0 => true
+links created 13/13
+host PC-A 10.1.10.10 gw 10.1.10.1
+host PC-B 10.2.10.10 gw 10.2.10.1
+BUILD COMPLETE devices=14 links=13

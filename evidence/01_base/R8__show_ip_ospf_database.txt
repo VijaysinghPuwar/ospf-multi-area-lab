@@ -1,0 +1,22 @@
+# R8# show ip ospf database   (captured 2026-10-30T16:13:03.012Z)
+show ip ospf database
+            OSPF Router with ID (8.8.8.8) (Process ID 1)
+
+                Router Link States (Area 4)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+8.8.8.8         8.8.8.8         129         0x80000004 0x008991 4
+5.5.5.5         5.5.5.5         129         0x80000002 0x002548 2
+
+                Summary ASB Link States (Area 4)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         5.5.5.5         124         0x80000001 0x00c084
+7.7.7.7         5.5.5.5         99          0x80000002 0x00a982
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         139         0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         138         0x80000001 0x00ef10 0
+172.16.0.0      7.7.7.7         139         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         138         0x80000001 0x006680 0
+R8#

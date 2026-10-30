@@ -1,0 +1,12 @@
+capture 33_drills_b_restored at 2026-10-30T16:40:18.461Z
+evidence/33_drills_b_restored/R1__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/33_drills_b_restored/R2__show_ip_ospf_neighbor.txt  (603 chars)
+evidence/33_drills_b_restored/R3__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/33_drills_b_restored/R4__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/33_drills_b_restored/R5__show_ip_ospf_neighbor.txt  (348 chars)
+evidence/33_drills_b_restored/R6__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/33_drills_b_restored/R7__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/33_drills_b_restored/R8__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/33_drills_b_restored/R1__show_ip_route_ospf.txt  (1267 chars)
+evidence/33_drills_b_restored/R6__show_ip_ospf.txt  (946 chars)
+evidence/33_drills_b_restored/R1__show_ip_ospf_interface_GigabitEthernet0_2.txt  (628 chars)

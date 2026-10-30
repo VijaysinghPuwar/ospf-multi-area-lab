@@ -1,0 +1,46 @@
+# PC-A console buffer at 2026-10-30T16:50:37.985Z
+
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping 172.16.0.1
+
+Pinging 172.16.0.1 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Reply from 172.16.0.1: bytes=32 time<1ms TTL=251
+
+Ping statistics for 172.16.0.1:
+    Packets: Sent = 4, Received = 1, Lost = 3 (75% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 172.16.0.1
+
+Pinging 172.16.0.1 with 32 bytes of data:
+
+Reply from 172.16.0.1: bytes=32 time<1ms TTL=251
+Reply from 172.16.0.1: bytes=32 time<1ms TTL=251
+Reply from 172.16.0.1: bytes=32 time<1ms TTL=251
+Reply from 172.16.0.1: bytes=32 time<1ms TTL=251
+
+Ping statistics for 172.16.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>ping 10.2.10.10
+
+Pinging 10.2.10.10 with 32 bytes of data:
+
+Reply from 10.2.10.10: bytes=32 time<1ms TTL=124
+Reply from 10.2.10.10: bytes=32 time<1ms TTL=124
+Reply from 10.2.10.10: bytes=32 time<1ms TTL=124
+Reply from 10.2.10.10: bytes=32 time<1ms TTL=124
+
+Ping statistics for 10.2.10.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\>

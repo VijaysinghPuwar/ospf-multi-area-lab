@@ -1,0 +1,6 @@
+capture 03_dr_return at 2026-10-30T16:17:31.175Z
+evidence/03_dr_return/R1__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/03_dr_return/R2__show_ip_ospf_neighbor.txt  (528 chars)
+evidence/03_dr_return/R3__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/03_dr_return/R4__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/03_dr_return/R4__show_ip_ospf_interface_GigabitEthernet0_0.txt  (837 chars)

@@ -1,0 +1,29 @@
+# step 09_cost_restore_lo3 applied 2026-10-30T16:20:38.107Z
+R1(config)# interface GigabitEthernet0/2
+   interface GigabitEthernet0/2
+   R1(config-if)#
+R1(config)# no ip ospf cost
+   no ip ospf cost
+   R1(config-if)#
+R2(config)# interface GigabitEthernet0/2
+   interface GigabitEthernet0/2
+   R2(config-if)#
+R2(config)# no ip ospf cost
+   no ip ospf cost
+   R2(config-if)#
+R5(config)# interface Loopback3
+   interface Loopback3
+   R5(config-if)#
+R5(config)# ip ospf network point-to-point
+   ip ospf network point-to-point
+   R5(config-if)#
+R5(config)# interface Loopback0
+   interface Loopback0
+   R5(config-if)#
+R5(config)# ipv6 address 2001:db8:ffff::5/128
+   ipv6 address 2001:db8:ffff::5/128
+   R5(config-if)#
+R5(config)# ipv6 ospf 1 area 1
+   ipv6 ospf 1 area 1
+   R5(config-if)#
+rejected=0

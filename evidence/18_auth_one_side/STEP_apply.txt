@@ -1,0 +1,11 @@
+# step 18_auth_one_side applied 2026-10-30T16:32:52.045Z
+R2(config)# interface GigabitEthernet0/1
+   interface GigabitEthernet0/1
+   R2(config-if)#
+R2(config)# ip ospf authentication message-digest
+   ip ospf authentication message-digest
+   R2(config-if)#
+R2(config)# ip ospf message-digest-key 1 md5 OspfLab1
+   ip ospf message-digest-key 1 md5 OspfLab1
+   R2(config-if)#
+rejected=0

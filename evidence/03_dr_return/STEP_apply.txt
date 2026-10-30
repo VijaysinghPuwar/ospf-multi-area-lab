@@ -1,0 +1,9 @@
+# step 03_dr_return applied 2026-10-30T16:16:30.466Z
+R4(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R4(config-if)#
+R4(config)# no shutdown
+   no shutdown
+   
+   R4(config-if)#
+rejected=0

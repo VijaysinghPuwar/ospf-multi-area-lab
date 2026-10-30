@@ -1,0 +1,6 @@
+capture 02_dr_fail at 2026-10-30T16:16:30.458Z
+evidence/02_dr_fail/R1__show_ip_ospf_neighbor.txt  (358 chars)
+evidence/02_dr_fail/R2__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/02_dr_fail/R3__show_ip_ospf_neighbor.txt  (358 chars)
+evidence/02_dr_fail/R1__show_ip_ospf_interface_GigabitEthernet0_0.txt  (837 chars)
+evidence/02_dr_fail/R1__show_ip_ospf_database_network.txt  (905 chars)

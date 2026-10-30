@@ -1,0 +1,112 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R3(config)# | hostname R3
+    hostname R3
+    R3(config)#
+R3(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R3(config)#
+R3(config)# | ipv6 unicast-routing
+    ipv6 unicast-routing
+    R3(config)#
+R3(config-rtr)# | ipv6 router ospf 1
+    ipv6 router ospf 1
+    %OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router-id,please configure manually
+    R3(config-rtr)#
+R3(config-rtr)# |  router-id 3.3.3.3
+    router-id 3.3.3.3
+    R3(config-rtr)#
+R3(config)# |  exit
+    exit
+    R3(config)#
+R3(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R3(config-if)#
+R3(config-if)# |  ip address 10.255.0.3 255.255.255.255
+    ip address 10.255.0.3 255.255.255.255
+    R3(config-if)#
+R3(config-if)# |  ipv6 address 2001:db8:ffff::3/128
+    ipv6 address 2001:db8:ffff::3/128
+    R3(config-if)#
+R3(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R3(config-if)#
+R3(config)# |  exit
+    exit
+    R3(config)#
+R3(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R3(config-if)#
+R3(config-if)# |  description BACKBONE-LAN
+    description BACKBONE-LAN
+    R3(config-if)#
+R3(config-if)# |  ip address 10.0.0.3 255.255.255.0
+    ip address 10.0.0.3 255.255.255.0
+    R3(config-if)#
+R3(config-if)# |  ipv6 address 2001:db8::3/64
+    ipv6 address 2001:db8::3/64
+    R3(config-if)#
+R3(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R3(config-if)#
+R3(config-if)# |  no shutdown
+    no shutdown
+    
+    R3(config-if)#
+R3(config)# |  exit
+    exit
+    R3(config)#
+R3(config-if)# | interface GigabitEthernet0/1
+    interface GigabitEthernet0/1
+    R3(config-if)#
+R3(config-if)# |  description TO-R6-AREA2
+    description TO-R6-AREA2
+    R3(config-if)#
+R3(config-if)# |  ip address 10.2.36.1 255.255.255.252
+    ip address 10.2.36.1 255.255.255.252
+    R3(config-if)#
+R3(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R3(config-if)#
+R3(config-if)# |  no shutdown
+    no shutdown
+    
+    R3(config-if)#
+R3(config)# |  exit
+    exit
+    R3(config)#
+R3(config-router)# | router ospf 1
+    router ospf 1
+    R3(config-router)#
+R3(config-router)# |  router-id 3.3.3.3
+    router-id 3.3.3.3
+    R3(config-router)#
+R3(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R3(config-router)#
+R3(config-router)# |  network 10.0.0.0 0.0.0.255 area 0
+    network 10.0.0.0 0.0.0.255 area 0
+    R3(config-router)#
+R3(config-router)# |  network 10.255.0.3 0.0.0.0 area 0
+    network 10.255.0.3 0.0.0.0 area 0
+    R3(config-router)#
+R3(config-router)# |  network 10.2.36.0 0.0.0.3 area 2
+    network 10.2.36.0 0.0.0.3 area 2
+    R3(config-router)#
+R3(config)# |  exit
+    exit
+    R3(config)#
+R3# | end
+    end
+    R3#
+R3# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R3#

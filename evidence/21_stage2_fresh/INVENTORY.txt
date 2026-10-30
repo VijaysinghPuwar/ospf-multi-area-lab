@@ -1,0 +1,14 @@
+ISP | model 2911 | type 0
+Power Distribution Device2 | model Power Distribution Device | type 45
+R1 | model 2911 | type 0
+SW-BB | model 2960-24TT | type 1
+R2 | model 2911 | type 0
+R3 | model 2911 | type 0
+R4 | model 2911 | type 0
+R5 | model 2911 | type 0
+R8 | model 2911 | type 0
+PC-A | model PC-PT | type 8
+R6 | model 2911 | type 0
+PC-B | model PC-PT | type 8
+R7 | model 2911 | type 0
+PARTNER | model 2911 | type 0

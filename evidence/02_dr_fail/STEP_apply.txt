@@ -1,0 +1,9 @@
+# step 02_dr_fail applied 2026-10-30T16:15:34.878Z
+R4(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R4(config-if)#
+R4(config)# shutdown
+   shutdown
+   
+   R4(config-if)#
+rejected=0

@@ -1,0 +1,56 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+ISP(config)# | hostname ISP
+    hostname ISP
+    ISP(config)#
+ISP(config)# | no ip domain-lookup
+    no ip domain-lookup
+    ISP(config)#
+ISP(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    ISP(config-if)#
+ISP(config-if)# |  description TO-R1 (customer)
+    description TO-R1 (customer)
+    ISP(config-if)#
+ISP(config-if)# |  ip address 198.51.100.2 255.255.255.252
+    ip address 198.51.100.2 255.255.255.252
+    ISP(config-if)#
+ISP(config-if)# |  no shutdown
+    no shutdown
+    
+    ISP(config-if)#
+ISP(config)# |  exit
+    exit
+    ISP(config)#
+ISP(config-if)# | interface Loopback1
+    interface Loopback1
+    
+    ISP(config-if)#
+ISP(config-if)# |  description INTERNET-SERVICE-NET
+    description INTERNET-SERVICE-NET
+    ISP(config-if)#
+ISP(config-if)# |  ip address 203.0.113.1 255.255.255.0
+    ip address 203.0.113.1 255.255.255.0
+    ISP(config-if)#
+ISP(config)# |  exit
+    exit
+    ISP(config)#
+ISP(config)# | ip route 10.0.0.0 255.0.0.0 198.51.100.1
+    ip route 10.0.0.0 255.0.0.0 198.51.100.1
+    ISP(config)#
+ISP(config)# | ip route 172.16.0.0 255.255.0.0 198.51.100.1
+    ip route 172.16.0.0 255.255.0.0 198.51.100.1
+    ISP(config)#
+ISP# | end
+    end
+    ISP#
+ISP# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    ISP#

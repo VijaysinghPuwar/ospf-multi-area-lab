@@ -1,0 +1,7 @@
+capture 05b_prio_zero at 2026-10-30T16:19:26.555Z
+evidence/05b_prio_zero/R1__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/05b_prio_zero/R2__show_ip_ospf_neighbor.txt  (528 chars)
+evidence/05b_prio_zero/R3__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/05b_prio_zero/R4__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/05b_prio_zero/R1__show_ip_ospf_interface_GigabitEthernet0_0.txt  (848 chars)
+evidence/05b_prio_zero/R4__show_ip_ospf_interface_GigabitEthernet0_0.txt  (837 chars)

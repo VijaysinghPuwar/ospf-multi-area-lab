@@ -1,0 +1,14 @@
+# step 05_prio_clear applied 2026-10-30T16:17:31.185Z
+R1# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R2# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R3# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R4# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+rejected=0

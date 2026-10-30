@@ -1,0 +1,180 @@
+# R2 console buffer at 2026-10-30T16:38:55.127Z
+
+  Internet address is 10.1.25.1/30, Area 0
+  Process ID 1, Router ID 2.2.2.2, Network Type VIRTUAL_LINK, Cost: 10
+  Configured as demand circuit.
+  Run as demand circuit.
+  DoNotAge LSA allowed.
+  Transmit Delay is 1 sec, State POINT-TO-POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:00
+  Supports Link-local Signaling (LLS)
+  Index 5/5, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 0
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Suppress hello for 0 neighbor(s)
+R2#show ip ospf virtual-links
+Virtual Link OSPF_VL0 to router 5.5.5.5 is up
+  Run as demand circuit
+  Transit area 1, via interface GigabitEthernet0/1, Cost of using 10
+  Transmit Delay is 1 sec, State POINT_TO_POINT,
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:04
+    Adjacency State FULL
+    Index 1/2, retransmission queue length 0, number of retransmission 0
+        First 0x0(0)/0x0(0) Next 0x0(0)/0x0(0)
+        Last retransmission scan length is 0, maximum is 0
+        Last retransmission scan time is 0 msec, maximum is 0 msec
+R2#terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ipv6 ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Interface ID    Interface
+1.1.1.1           1   2WAY/DROTHER    00:00:35    1               GigabitEthernet0/0
+3.3.3.3           1   FULL/BDR        00:00:35    1               GigabitEthernet0/0
+4.4.4.4           1   FULL/DR         00:00:35    1               GigabitEthernet0/0
+5.5.5.5           1   FULL/DR         00:00:35    1               GigabitEthernet0/1
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface GigabitEthernet0/2
+R2(config-if)#ip mtu 1400
+R2(config-if)#shutdown
+
+R2(config-if)#no shutdown
+
+R2(config-if)#end
+R2#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+
+00:06:27: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:06:27: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from DOWN to INIT, Received Hello
+
+00:06:37: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from 2WAY to EXSTART, AdjOK?
+
+00:06:37: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXSTART to EXCHANGE, Negotiation Done
+
+00:06:37: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXCHANGE to FULL, Exchange Done
+
+00:06:37: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from LOADING to FULL, Loading Done
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+5.5.5.5           0   FULL/  -        00:00:31    10.1.25.2       OSPF_VL0
+1.1.1.1           0   FULL/  -        00:00:31    10.0.12.1       GigabitEthernet0/2
+1.1.1.1         100   FULL/DR         00:00:33    10.0.0.1        GigabitEthernet0/0
+3.3.3.3           0   FULL/DROTHER    00:00:33    10.0.0.3        GigabitEthernet0/0
+5.5.5.5           0   FULL/  -        00:00:33    10.1.25.2       GigabitEthernet0/1
+R2#show interfaces GigabitEthernet0/2
+GigabitEthernet0/2 is up, line protocol is up (connected)
+  Hardware is CN Gigabit Ethernet, address is 000c.85a8.7203 (bia 000c.85a8.7203)
+  Description: TO-R1-DIRECT
+  Internet address is 10.0.12.2/30
+  MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00, 
+  Last input 00:00:08, output 00:00:05, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0 (size/max/drops); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue :0/40 (size/max)
+  5 minute input rate 121 bits/sec, 0 packets/sec
+  5 minute output rate 98 bits/sec, 0 packets/sec
+     277 packets input, 19712 bytes, 0 no buffer
+     Received 0 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 watchdog, 1017 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     119 packets output, 9236 bytes, 0 underruns
+     0 output errors, 0 collisions, 2 interface resets
+     0 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier
+     0 output buffer failures, 0 output buffers swapped out
+
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface GigabitEthernet0/2
+R2(config-if)#no ip mtu
+R2(config-if)#shutdown
+
+R2(config-if)#no shutdown
+
+R2(config-if)#end
+R2#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+
+00:07:26: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:07:26: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from DOWN to INIT, Received Hello
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from 2WAY to EXSTART, AdjOK?
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from EXCHANGE to FULL, Exchange Done
+
+00:07:36: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from LOADING to FULL, Loading Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:07:40: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R2#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+5.5.5.5           0   FULL/  -        00:00:37    10.1.25.2       OSPF_VL0
+1.1.1.1           0   FULL/  -        00:00:35    10.0.12.1       GigabitEthernet0/2
+1.1.1.1         100   FULL/DR         00:00:39    10.0.0.1        GigabitEthernet0/0
+3.3.3.3           0   FULL/DROTHER    00:00:39    10.0.0.3        GigabitEthernet0/0
+4.4.4.4           0   FULL/DROTHER    00:00:39    10.0.0.4        GigabitEthernet0/0
+5.5.5.5           0   FULL/  -        00:00:39    10.1.25.2       GigabitEthernet0/1
+R2#
+00:08:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from INIT to 2WAY, 2-Way Received
+
+00:08:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/2 from 2WAY to EXSTART, AdjOK?

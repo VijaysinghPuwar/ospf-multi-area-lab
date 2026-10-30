@@ -1,0 +1,8 @@
+capture 43_type4_check at 2026-10-30T16:43:44.912Z
+evidence/43_type4_check/R4__show_ip_ospf_database_asbr_summary.txt  (2523 chars)
+evidence/43_type4_check/R1__show_ip_ospf_database_asbr_summary.txt  (2181 chars)
+evidence/43_type4_check/R2__show_ip_ospf_database_asbr_summary.txt  (3395 chars)
+evidence/43_type4_check/R5__show_ip_ospf_database_asbr_summary.txt  (4317 chars)
+evidence/43_type4_check/R2__show_ip_route_172_16_0_0.txt  (222 chars)
+evidence/43_type4_check/R1__show_ip_route_172_16_0_0.txt  (222 chars)
+evidence/43_type4_check/R4__show_ip_ospf_database_external_172_16_0_0.txt  (123 chars)

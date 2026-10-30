@@ -1,0 +1,4 @@
+capture 10_stub_mismatch at 2026-10-30T16:21:32.644Z
+evidence/10_stub_mismatch/R3__show_ip_ospf_neighbor.txt  (358 chars)
+evidence/10_stub_mismatch/R6__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/10_stub_mismatch/R3__show_ip_ospf.txt  (1432 chars)

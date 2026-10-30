@@ -1,0 +1,8 @@
+capture 09_cost_restore_lo3 at 2026-10-30T16:20:59.125Z
+evidence/09_cost_restore_lo3/R1__show_ip_ospf_interface_brief.txt  (386 chars)
+evidence/09_cost_restore_lo3/R1__show_ip_route_ospf.txt  (1337 chars)
+evidence/09_cost_restore_lo3/R5__show_ip_ospf_interface_Loopback3.txt  (494 chars)
+evidence/09_cost_restore_lo3/R5__show_ip_ospf_interface_Loopback1.txt  (494 chars)
+evidence/09_cost_restore_lo3/R5__show_ip_ospf_interface_Loopback0.txt  (231 chars)
+evidence/09_cost_restore_lo3/R6__show_ip_ospf_database.txt  (2031 chars)
+evidence/09_cost_restore_lo3/R6__show_ip_route.txt  (2372 chars)

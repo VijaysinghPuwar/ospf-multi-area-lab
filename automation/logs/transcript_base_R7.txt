@@ -1,0 +1,109 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R7(config)# | hostname R7
+    hostname R7
+    R7(config)#
+R7(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R7(config)#
+R7(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R7(config-if)#
+R7(config-if)# |  ip address 10.255.0.7 255.255.255.255
+    ip address 10.255.0.7 255.255.255.255
+    R7(config-if)#
+R7(config)# |  exit
+    exit
+    R7(config)#
+R7(config-if)# | interface Loopback1
+    interface Loopback1
+    
+    R7(config-if)#
+R7(config-if)# |  description BRANCH-NET
+    description BRANCH-NET
+    R7(config-if)#
+R7(config-if)# |  ip address 10.3.1.1 255.255.255.0
+    ip address 10.3.1.1 255.255.255.0
+    R7(config-if)#
+R7(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R7(config-if)#
+R7(config)# |  exit
+    exit
+    R7(config)#
+R7(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R7(config-if)#
+R7(config-if)# |  description TO-R4-AREA3
+    description TO-R4-AREA3
+    R7(config-if)#
+R7(config-if)# |  ip address 10.3.47.2 255.255.255.252
+    ip address 10.3.47.2 255.255.255.252
+    R7(config-if)#
+R7(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R7(config-if)#
+R7(config-if)# |  no shutdown
+    no shutdown
+    
+    R7(config-if)#
+R7(config)# |  exit
+    exit
+    R7(config)#
+R7(config-if)# | interface GigabitEthernet0/1
+    interface GigabitEthernet0/1
+    R7(config-if)#
+R7(config-if)# |  description TO-PARTNER (not OSPF)
+    description TO-PARTNER (not OSPF)
+    R7(config-if)#
+R7(config-if)# |  ip address 192.168.100.1 255.255.255.252
+    ip address 192.168.100.1 255.255.255.252
+    R7(config-if)#
+R7(config-if)# |  no shutdown
+    no shutdown
+    
+    R7(config-if)#
+R7(config)# |  exit
+    exit
+    R7(config)#
+R7(config)# | ip route 172.16.0.0 255.255.255.0 192.168.100.2
+    ip route 172.16.0.0 255.255.255.0 192.168.100.2
+    R7(config)#
+R7(config)# | ip route 172.16.1.0 255.255.255.0 192.168.100.2
+    ip route 172.16.1.0 255.255.255.0 192.168.100.2
+    R7(config)#
+R7(config-router)# | router ospf 1
+    router ospf 1
+    R7(config-router)#
+R7(config-router)# |  router-id 7.7.7.7
+    router-id 7.7.7.7
+    R7(config-router)#
+R7(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R7(config-router)#
+R7(config-router)# |  network 10.3.0.0 0.0.255.255 area 3
+    network 10.3.0.0 0.0.255.255 area 3
+    R7(config-router)#
+R7(config-router)# |  network 10.255.0.7 0.0.0.0 area 3
+    network 10.255.0.7 0.0.0.0 area 3
+    R7(config-router)#
+R7(config-router)# |  redistribute static subnets
+    redistribute static subnets
+    R7(config-router)#
+R7(config)# |  exit
+    exit
+    R7(config)#
+R7# | end
+    end
+    R7#
+R7# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R7#

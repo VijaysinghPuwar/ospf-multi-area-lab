@@ -1,0 +1,113 @@
+# R6 console buffer at 2026-10-30T16:38:55.127Z
+
+
+R6#show ip ospf database
+            OSPF Router with ID (6.6.6.6) (Process ID 1)
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+6.6.6.6         6.6.6.6         109         0x80000005 0x003aad 4
+3.3.3.3         3.3.3.3         109         0x80000003 0x00fca4 2
+
+                Summary Net Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         3.3.3.3         104         0x80000001 0x003919
+R6#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 10.2.36.1 to network 0.0.0.0
+
+     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks
+C       10.2.10.0/24 is directly connected, GigabitEthernet0/1
+L       10.2.10.1/32 is directly connected, GigabitEthernet0/1
+C       10.2.36.0/30 is directly connected, GigabitEthernet0/0
+L       10.2.36.2/32 is directly connected, GigabitEthernet0/0
+C       10.255.0.6/32 is directly connected, Loopback0
+O*IA 0.0.0.0/0 [110/11] via 10.2.36.1, 00:01:33, GigabitEthernet0/0
+
+R6#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R6(config)#interface GigabitEthernet0/0
+R6(config-if)#ip ospf hello-interval 5
+R6(config-if)#end
+R6#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R6#show ip ospf neighbor
+
+R6#show ip ospf interface GigabitEthernet0/0
+
+GigabitEthernet0/0 is up, line protocol is up
+  Internet address is 10.2.36.2/30, Area 2
+  Process ID 1, Router ID 6.6.6.6, Network Type POINT-TO-POINT, Cost: 10
+  Transmit Delay is 1 sec, State POINT-TO-POINT,
+  Timer intervals configured, Hello 5, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:03
+  Index 1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Suppress hello for 0 neighbor(s)
+R6#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R6(config)#interface GigabitEthernet0/0
+R6(config-if)#no ip ospf hello-interval
+R6(config-if)#no ip ospf dead-interval
+R6(config-if)#end
+R6#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:07:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R6#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+3.3.3.3           0   FULL/  -        00:00:39    10.2.36.1       GigabitEthernet0/0
+R6#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R6(config)#router ospf 1
+R6(config-router)#router-id 3.3.3.3
+R6(config-router)#end
+R6#clear ip ospf process
+Reset ALL OSPF processes? [no]: yes
+
+R6#Reload or use "clear ip ospf process" command, for this to take effect
+
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:08:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Adjacency forced to reset
+
+00:08:30: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+
+00:08:40: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:08:50: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:08:50: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?

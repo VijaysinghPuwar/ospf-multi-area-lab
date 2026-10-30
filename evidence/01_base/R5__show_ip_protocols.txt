@@ -1,0 +1,23 @@
+# R5# show ip protocols   (captured 2026-10-30T16:13:03.012Z)
+show ip protocols
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set 
+  Incoming update filter list for all interfaces is not set 
+  Router ID 5.5.5.5
+  Number of areas in this router is 2. 2 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    10.1.0.0 0.0.255.255 area 1
+    10.255.0.5 0.0.0.0 area 1
+    10.4.58.0 0.0.0.3 area 4
+  Passive Interface(s): 
+    GigabitEthernet0/2
+  Routing Information Sources:  
+    Gateway         Distance      Last Update 
+    2.2.2.2              110      00:02:09
+    5.5.5.5              110      00:02:09
+    8.8.8.8              110      00:02:09
+  Distance: (default is 110)
+
+R5#

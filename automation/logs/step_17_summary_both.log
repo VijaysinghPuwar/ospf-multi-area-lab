@@ -1,0 +1,8 @@
+# step 17_summary_both applied 2026-10-30T16:32:14.785Z
+R5(config)# router ospf 1
+   router ospf 1
+   R5(config-router)#
+R5(config)# area 1 range 10.1.0.0 255.255.0.0
+   area 1 range 10.1.0.0 255.255.0.0
+   R5(config-router)#
+rejected=0

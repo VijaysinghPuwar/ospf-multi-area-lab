@@ -1,0 +1,2 @@
+eval(SFM.getFileContents(BASE + "automation/caps.js"));
+CAP_TAG = "20_ospfv3"; CONSOLE = []; CAP = [["R1","show ipv6 ospf neighbor"],["R2","show ipv6 ospf neighbor"],["R5","show ipv6 ospf neighbor"],["R1","show ipv6 ospf"],["R1","show ipv6 ospf interface GigabitEthernet0/0"],["R1","show ipv6 ospf database"],["R1","show ipv6 route ospf"],["R5","show ipv6 route ospf"],["R1","ping 2001:db8:ffff::5"],["R1","ping 2001:db8:1:10::1"],["R1","show ipv6 interface brief"]]; runFromDisk("automation/capture.js");

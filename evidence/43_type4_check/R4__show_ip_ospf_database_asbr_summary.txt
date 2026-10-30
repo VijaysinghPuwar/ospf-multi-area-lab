@@ -1,0 +1,97 @@
+# R4# show ip ospf database asbr-summary   (captured 2026-10-30T16:43:44.912Z)
+show ip ospf database asbr-summary
+
+            OSPF Router with ID (4.4.4.4) (Process ID 1)
+
+                Summary ASB Link States (Area 0)
+
+  LS age: 337
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 7.7.7.7 (AS Boundary Router address)
+  Advertising Router: 5.5.5.5
+  LS Seq Number: 800000ac
+  Checksum: 0xaec9
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 10
+
+  LS age: 282
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 1.1.1.1 (AS Boundary Router address)
+  Advertising Router: 4.4.4.4
+  LS Seq Number: 80000005
+  Checksum: 0xcc79
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 0
+
+  LS age: 282
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 1.1.1.1 (AS Boundary Router address)
+  Advertising Router: 3.3.3.3
+  LS Seq Number: 80000004
+  Checksum: 0xec5e
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 0
+
+  LS age: 274
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 7.7.7.7 (AS Boundary Router address)
+  Advertising Router: 4.4.4.4
+  LS Seq Number: 80000006
+  Checksum: 0x1a09
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 10
+
+  LS age: 274
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 7.7.7.7 (AS Boundary Router address)
+  Advertising Router: 2.2.2.2
+  LS Seq Number: 8000009e
+  Checksum: 0x256d
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 10
+
+  LS age: 254
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 1.1.1.1 (AS Boundary Router address)
+  Advertising Router: 2.2.2.2
+  LS Seq Number: 800000a5
+  Checksum: 0x9009
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 20
+
+  LS age: 254
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 1.1.1.1 (AS Boundary Router address)
+  Advertising Router: 5.5.5.5
+  LS Seq Number: 800000da
+  Checksum: 0x67fa
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 10
+
+                Summary ASB Link States (Area 3)
+
+  LS age: 244
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 1.1.1.1 (AS Boundary Router address)
+  Advertising Router: 4.4.4.4
+  LS Seq Number: 80000036
+  Checksum: 0x565a
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 100
+R4#

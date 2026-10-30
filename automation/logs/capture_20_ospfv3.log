@@ -1,0 +1,12 @@
+capture 20_ospfv3 at 2026-10-30T16:34:52.084Z
+evidence/20_ospfv3/R1__show_ipv6_ospf_neighbor.txt  (359 chars)
+evidence/20_ospfv3/R2__show_ipv6_ospf_neighbor.txt  (444 chars)
+evidence/20_ospfv3/R5__show_ipv6_ospf_neighbor.txt  (189 chars)
+evidence/20_ospfv3/R1__show_ipv6_ospf.txt  (726 chars)
+evidence/20_ospfv3/R1__show_ipv6_ospf_interface_GigabitEthernet0_0.txt  (941 chars)
+evidence/20_ospfv3/R1__show_ipv6_ospf_database.txt  (1706 chars)
+evidence/20_ospfv3/R1__show_ipv6_route_ospf.txt  (917 chars)
+evidence/20_ospfv3/R5__show_ipv6_route_ospf.txt  (829 chars)
+evidence/20_ospfv3/R1__ping_2001_db8_ffff_5.txt  (128 chars)
+evidence/20_ospfv3/R1__ping_2001_db8_1_10_1.txt  (0 chars)
+evidence/20_ospfv3/R1__show_ipv6_interface_brief.txt  (0 chars)

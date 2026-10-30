@@ -1,0 +1,221 @@
+# R7 console buffer at 2026-10-30T16:38:55.127Z
+System Bootstrap, Version 15.1(4)M4, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 2010 by cisco Systems, Inc.
+Total memory size = 512 MB - On-board = 512 MB, DIMM0 = 0 MB
+CISCO2911/K9 platform with 524288 Kbytes of main memory
+Main memory is configured to 72/-1(On-board/DIMM0) bit mode with ECC disabled
+
+Readonly ROMMON initialized
+
+program load complete, entry point: 0x80803000, size: 0x1b340
+program load complete, entry point: 0x80803000, size: 0x1b340
+
+IOS Image Load Test
+___________________
+Digitally Signed Release Software
+program load complete, entry point: 0x81000000, size: 0x3bcd3d8
+Self decompressing the image :
+######################### [OK]
+Smart Init is enabled
+smart init is sizing iomem
+                  TYPE      MEMORY_REQ
+     Onboard devices &
+          buffer pools      0x022F6000
+-----------------------------------------------
+                TOTAL:      0x022F6000
+Rounded IOMEM up to: 36Mb.
+Using 6 percent iomem. [36Mb/512Mb]
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M5, RELEASE SOFTWARE (fc2)Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Wed 18-Jul-07 04:52 by pt_team
+Image text-base: 0x2100F918, data-base: 0x24729040
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco CISCO2911/K9 (revision 1.0) with 491520K/32768K bytes of memory.
+Processor board ID FTX152400KS
+3 Gigabit Ethernet interfaces
+DRAM configuration is 64 bits wide with parity disabled.
+255K bytes of non-volatile configuration memory.
+249856K bytes of ATA System CompactFlash 0 (Read/Write)
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R7
+R7(config)#no ip domain-lookup
+R7(config)#interface Loopback0
+
+R7(config-if)#ip address 10.255.0.7 255.255.255.255
+R7(config-if)#exit
+R7(config)#interface Loopback1
+
+R7(config-if)#description BRANCH-NET
+R7(config-if)#ip address 10.3.1.1 255.255.255.0
+R7(config-if)#ip ospf network point-to-point
+R7(config-if)#exit
+R7(config)#interface GigabitEthernet0/0
+R7(config-if)#description TO-R4-AREA3
+R7(config-if)#ip address 10.3.47.2 255.255.255.252
+R7(config-if)#ip ospf network point-to-point
+R7(config-if)#no shutdown
+
+R7(config-if)#exit
+R7(config)#interface GigabitEthernet0/1
+R7(config-if)#description TO-PARTNER (not OSPF)
+R7(config-if)#ip address 192.168.100.1 255.255.255.252
+R7(config-if)#no shutdown
+
+R7(config-if)#exit
+R7(config)#ip route 172.16.0.0 255.255.255.0 192.168.100.2
+R7(config)#ip route 172.16.1.0 255.255.255.0 192.168.100.2
+R7(config)#router ospf 1
+R7(config-router)#router-id 7.7.7.7
+R7(config-router)#log-adjacency-changes detail
+R7(config-router)#auto-cost reference-bandwidth 10000
+% OSPF: Reference bandwidth is changed.
+        Please ensure reference bandwidth is consistent across all routers.
+R7(config-router)#network 10.3.0.0 0.0.255.255 area 3
+R7(config-router)#network 10.255.0.7 0.0.0.0 area 3
+R7(config-router)#redistribute static subnets
+R7(config-router)#exit
+R7(config)#end
+R7#write memory
+Building configuration...
+[OK]
+R7#
+%LINK-3-UPDOWN: Interface Loopback0, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+
+%LINK-3-UPDOWN: Interface Loopback1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback1, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:00:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from DOWN to INIT, Received Hello
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from INIT to 2WAY, 2-Way Received
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R7#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           0   FULL/  -        00:00:31    10.3.47.1       GigabitEthernet0/0
+R7#show ip route ospf
+     10.0.0.0/8 is variably subnetted, 16 subnets, 4 masks
+O IA    10.0.0.0 [110/110] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.0.12.0 [110/120] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.1.0.0 [110/120] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.2.10.0 [110/220] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.2.36.0 [110/120] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.1 [110/111] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.2 [110/111] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.3 [110/111] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.4 [110/11] via 10.3.47.1, 00:01:38, GigabitEthernet0/0
+O IA    10.255.0.5 [110/121] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O IA    10.255.0.6 [110/121] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O E1 203.0.113.0 [110/130] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.3.47.1, 00:00:53, GigabitEthernet0/0
+
+R7#show ip ospf interface brief
+Interface     PID   Area                     IP Address/Mask          Cost  State  Nbrs F/C
+Gig0/0          1   3                      10.3.47.2/255.255.255.252   10   POINT  0/0
+Lo1             1   3                         10.3.1.1/255.255.255.0   1    POINT  0/0
+Lo0             1   3                     10.255.0.7/255.255.255.255   1     WAIT  0/0
+
+R7#show ip ospf database
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Router Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+7.7.7.7         7.7.7.7         109         0x80000006 0x0081a9 4
+4.4.4.4         4.4.4.4         109         0x80000003 0x006a13 2
+
+                Summary Net Link States (Area 3)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.255.0.4      4.4.4.4         104         0x80000002 0x006ed0
+10.0.0.0        4.4.4.4         64          0x80000003 0x007668
+10.0.12.0       4.4.4.4         64          0x80000005 0x004089
+10.255.0.2      4.4.4.4         64          0x80000006 0x006672
+10.255.0.3      4.4.4.4         64          0x80000007 0x005a7c
+10.255.0.1      4.4.4.4         64          0x80000008 0x006c6b
+10.1.0.0        4.4.4.4         64          0x80000009 0x00c20b
+10.255.0.5      4.4.4.4         64          0x8000000a 0x00a423
+10.2.36.0       4.4.4.4         64          0x8000000b 0x001396
+10.2.10.0       4.4.4.4         64          0x8000000c 0x002e2d
+10.255.0.6      4.4.4.4         64          0x8000000d 0x00942f
+
+                Summary ASB Link States (Area 3)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         4.4.4.4         64          0x80000004 0x00ba28
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+172.16.0.0      7.7.7.7         119         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         118         0x80000001 0x006680 0
+0.0.0.0         1.1.1.1         119         0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         118         0x80000001 0x00ef10 0
+R7#
+00:09:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:09:10: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached

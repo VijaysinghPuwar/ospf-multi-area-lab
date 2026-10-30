@@ -1,0 +1,8 @@
+# step 12_area2_totally_stubby applied 2026-10-30T16:22:33.067Z
+R3(config)# router ospf 1
+   router ospf 1
+   R3(config-router)#
+R3(config)# area 2 stub no-summary
+   area 2 stub no-summary
+   R3(config-router)#
+rejected=0

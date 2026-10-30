@@ -1,0 +1,5 @@
+capture 17_summary_both at 2026-10-30T16:32:52.041Z
+evidence/17_summary_both/R1__show_ip_route_ospf.txt  (1265 chars)
+evidence/17_summary_both/R1__show_ip_ospf_database_summary.txt  (3762 chars)
+evidence/17_summary_both/R5__show_ip_route_10_1_0_0_255_255_0_0.txt  (62 chars)
+evidence/17_summary_both/R8__show_ip_route.txt  (2275 chars)

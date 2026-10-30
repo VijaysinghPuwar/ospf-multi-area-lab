@@ -1,0 +1,66 @@
+# step 07_cost_refbw applied 2026-10-30T16:19:39.888Z
+R1(config)# router ospf 1
+   router ospf 1
+   R1(config-router)#
+R1(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R1(config-router)#
+R2(config)# router ospf 1
+   router ospf 1
+   R2(config-router)#
+R2(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R2(config-router)#
+R3(config)# router ospf 1
+   router ospf 1
+   R3(config-router)#
+R3(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R3(config-router)#
+R4(config)# router ospf 1
+   router ospf 1
+   R4(config-router)#
+R4(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R4(config-router)#
+R5(config)# router ospf 1
+   router ospf 1
+   R5(config-router)#
+R5(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R5(config-router)#
+R6(config)# router ospf 1
+   router ospf 1
+   R6(config-router)#
+R6(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R6(config-router)#
+R7(config)# router ospf 1
+   router ospf 1
+   R7(config-router)#
+R7(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R7(config-router)#
+R8(config)# router ospf 1
+   router ospf 1
+   R8(config-router)#
+R8(config)# auto-cost reference-bandwidth 10000
+   auto-cost reference-bandwidth 10000
+   % OSPF: Reference bandwidth is changed.
+           Please ensure reference bandwidth is consistent across all routers.
+   R8(config-router)#
+rejected=0

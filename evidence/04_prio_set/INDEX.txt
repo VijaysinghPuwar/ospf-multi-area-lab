@@ -1,0 +1,4 @@
+capture 04_prio_set at 2026-10-30T16:17:31.183Z
+evidence/04_prio_set/R1__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/04_prio_set/R3__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/04_prio_set/R1__show_ip_ospf_interface_GigabitEthernet0_0.txt  (839 chars)

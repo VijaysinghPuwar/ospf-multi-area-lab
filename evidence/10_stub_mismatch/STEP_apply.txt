@@ -1,0 +1,8 @@
+# step 10_stub_mismatch applied 2026-10-30T16:20:59.132Z
+R3(config)# router ospf 1
+   router ospf 1
+   R3(config-router)#
+R3(config)# area 2 stub
+   area 2 stub
+   R3(config-router)#
+rejected=0

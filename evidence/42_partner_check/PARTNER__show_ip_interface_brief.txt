@@ -1,0 +1,10 @@
+# PARTNER# show ip interface brief   (captured 2026-10-30T16:43:18.804Z)
+show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     192.168.100.2   YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES unset  administratively down down 
+GigabitEthernet0/2     unassigned      YES unset  administratively down down 
+Loopback1              172.16.0.1      YES manual up                    up 
+Loopback2              172.16.1.1      YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+PARTNER#

@@ -1,0 +1,4 @@
+capture 08_cost_manual at 2026-10-30T16:20:38.104Z
+evidence/08_cost_manual/R1__show_ip_ospf_interface_brief.txt  (386 chars)
+evidence/08_cost_manual/R1__show_ip_route_ospf.txt  (1334 chars)
+evidence/08_cost_manual/R1__show_ip_route_10_1_10_0.txt  (331 chars)

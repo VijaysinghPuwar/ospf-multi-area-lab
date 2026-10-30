@@ -1,0 +1,23 @@
+# step 32_drills_b applied 2026-10-30T16:37:52.589Z
+R4(config)# router ospf 1
+   router ospf 1
+   R4(config-router)#
+R4(config)# passive-interface GigabitEthernet0/1
+   passive-interface GigabitEthernet0/1
+   R4(config-router)#
+R6(config)# router ospf 1
+   router ospf 1
+   R6(config-router)#
+R6(config)# router-id 3.3.3.3
+   router-id 3.3.3.3
+   R6(config-router)#
+R6# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R1(config)# interface GigabitEthernet0/2
+   interface GigabitEthernet0/2
+   R1(config-if)#
+R1(config)# no ip ospf network point-to-point
+   no ip ospf network point-to-point
+   R1(config-if)#
+rejected=0

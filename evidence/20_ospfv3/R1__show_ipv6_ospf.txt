@@ -1,0 +1,21 @@
+# R1# show ipv6 ospf   (captured 2026-10-30T16:34:52.084Z)
+show ipv6 ospf
+ Routing Process "ospfv3 1" with ID 1.1.1.1
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 2
+        SPF algorithm executed 3 times
+        Number of LSA 13. Checksum Sum 0x0534ed
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+
+R1#

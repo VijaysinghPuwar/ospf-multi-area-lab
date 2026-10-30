@@ -1,0 +1,6 @@
+capture 18_auth_one_side at 2026-10-30T16:33:59.856Z
+evidence/18_auth_one_side/R2__show_ip_ospf_neighbor.txt  (518 chars)
+evidence/18_auth_one_side/R5__show_ip_ospf_neighbor.txt  (263 chars)
+evidence/18_auth_one_side/R2__show_ip_ospf_interface_GigabitEthernet0_1.txt  (1231 chars)
+evidence/18_auth_one_side/R2__show_ip_ospf_virtual_links.txt  (586 chars)
+evidence/18_auth_one_side/R8__show_ip_route.txt  (1824 chars)

@@ -1,0 +1,7 @@
+capture 42_partner_check at 2026-10-30T16:43:18.804Z
+evidence/42_partner_check/R5__show_ip_route_172_16_0_0.txt  (222 chars)
+evidence/42_partner_check/R5__show_ip_route_ospf.txt  (1413 chars)
+evidence/42_partner_check/R7__show_ip_route.txt  (2420 chars)
+evidence/42_partner_check/PARTNER__show_ip_interface_brief.txt  (575 chars)
+evidence/42_partner_check/PARTNER__show_ip_route.txt  (1074 chars)
+evidence/42_partner_check/R4__show_ip_route_172_16_0_0.txt  (364 chars)

@@ -1,0 +1,14 @@
+# step 05b_prio_zero applied 2026-10-30T16:19:04.118Z
+R3(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R3(config-if)#
+R3(config)# ip ospf priority 0
+   ip ospf priority 0
+   R3(config-if)#
+R4(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R4(config-if)#
+R4(config)# ip ospf priority 0
+   ip ospf priority 0
+   R4(config-if)#
+rejected=0

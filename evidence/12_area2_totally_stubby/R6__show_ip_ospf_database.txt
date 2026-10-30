@@ -1,0 +1,14 @@
+# R6# show ip ospf database   (captured 2026-10-30T16:24:43.222Z)
+show ip ospf database
+            OSPF Router with ID (6.6.6.6) (Process ID 1)
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+6.6.6.6         6.6.6.6         32          0x8000000c 0x002cb4 4
+3.3.3.3         3.3.3.3         32          0x8000000b 0x00ecac 2
+
+                Summary Net Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         3.3.3.3         28          0x80000055 0x00916c
+R6#

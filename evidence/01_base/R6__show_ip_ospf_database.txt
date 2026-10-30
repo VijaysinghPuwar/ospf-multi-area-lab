@@ -1,0 +1,40 @@
+# R6# show ip ospf database   (captured 2026-10-30T16:13:03.012Z)
+show ip ospf database
+            OSPF Router with ID (6.6.6.6) (Process ID 1)
+
+                Router Link States (Area 2)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+6.6.6.6         6.6.6.6         129         0x80000004 0x003c22 4
+3.3.3.3         3.3.3.3         129         0x80000002 0x004d67 2
+
+                Summary Net Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.0        3.3.3.3         124         0x80000001 0x00b691
+10.255.0.3      3.3.3.3         124         0x80000002 0x0096ad
+10.255.0.1      3.3.3.3         79          0x80000005 0x00ae93
+10.0.12.0       3.3.3.3         79          0x80000006 0x002019
+10.255.0.2      3.3.3.3         79          0x80000007 0x00a09e
+10.255.0.4      3.3.3.3         79          0x80000008 0x008ab1
+10.3.47.0       3.3.3.3         79          0x80000009 0x00739c
+10.3.1.0        3.3.3.3         79          0x8000000a 0x0089af
+10.255.0.7      3.3.3.3         79          0x8000000b 0x0070c4
+10.1.25.0       3.3.3.3         79          0x8000000c 0x0078ac
+10.1.10.0       3.3.3.3         79          0x8000000d 0x0038f6
+10.1.1.0        3.3.3.3         79          0x8000000e 0x00999d
+10.1.2.0        3.3.3.3         79          0x8000000f 0x008ca8
+10.1.3.1        3.3.3.3         79          0x80000010 0x0075bc
+10.255.0.5      3.3.3.3         79          0x80000011 0x0078b8
+
+                Summary ASB Link States (Area 2)
+Link ID         ADV Router      Age         Seq#       Checksum
+7.7.7.7         3.3.3.3         94          0x80000003 0x00e34f
+1.1.1.1         3.3.3.3         79          0x80000004 0x00f653
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         139         0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         138         0x80000001 0x00ef10 0
+172.16.0.0      7.7.7.7         139         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         138         0x80000001 0x006680 0
+R6#

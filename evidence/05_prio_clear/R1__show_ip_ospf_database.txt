@@ -1,0 +1,45 @@
+# R1# show ip ospf database   (captured 2026-10-30T16:18:33.494Z)
+show ip ospf database
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+                Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         51          0x8000000c 0x009b20 4
+4.4.4.4         4.4.4.4         46          0x8000000b 0x00bd34 2
+2.2.2.2         2.2.2.2         41          0x8000000e 0x0013a0 4
+3.3.3.3         3.3.3.3         41          0x8000000b 0x006d8e 2
+
+                Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.1        1.1.1.1         41          0x80000003 0x0056c4
+
+                Summary Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.2.36.0       3.3.3.3         46          0x80000004 0x00f829
+10.2.10.0       3.3.3.3         46          0x80000005 0x003205
+10.255.0.6      3.3.3.3         46          0x80000006 0x007ac1
+10.1.25.0       2.2.2.2         31          0x80000009 0x00929a
+10.1.10.0       2.2.2.2         31          0x8000000a 0x0052e4
+10.1.1.0        2.2.2.2         31          0x8000000b 0x00b38b
+10.1.2.0        2.2.2.2         31          0x8000000c 0x00a696
+10.1.3.1        2.2.2.2         31          0x8000000d 0x008faa
+10.255.0.5      2.2.2.2         31          0x8000000e 0x0092a6
+10.3.47.0       4.4.4.4         26          0x80000006 0x0051be
+10.3.1.0        4.4.4.4         26          0x80000007 0x0067d1
+10.255.0.7      4.4.4.4         26          0x80000008 0x004ee6
+
+                Summary ASB Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         2.2.2.2         51          0x80000007 0x000f3c
+7.7.7.7         2.2.2.2         51          0x80000008 0x00f73a
+7.7.7.7         4.4.4.4         26          0x80000005 0x00c16b
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+172.16.0.0      7.7.7.7         462         0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         461         0x80000001 0x006680 0
+0.0.0.0         1.1.1.1         52          0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         3600        0x80000001 0x00ef10 0
+203.0.113.0     1.1.1.1         51          0x80000002 0x00ed11 0
+R1#

@@ -1,0 +1,84 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R8(config)# | hostname R8
+    hostname R8
+    R8(config)#
+R8(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R8(config)#
+R8(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R8(config-if)#
+R8(config-if)# |  ip address 10.255.0.8 255.255.255.255
+    ip address 10.255.0.8 255.255.255.255
+    R8(config-if)#
+R8(config)# |  exit
+    exit
+    R8(config)#
+R8(config-if)# | interface Loopback1
+    interface Loopback1
+    
+    R8(config-if)#
+R8(config-if)# |  description REMOTE-NET
+    description REMOTE-NET
+    R8(config-if)#
+R8(config-if)# |  ip address 10.4.1.1 255.255.255.0
+    ip address 10.4.1.1 255.255.255.0
+    R8(config-if)#
+R8(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R8(config-if)#
+R8(config)# |  exit
+    exit
+    R8(config)#
+R8(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R8(config-if)#
+R8(config-if)# |  description TO-R5-AREA4
+    description TO-R5-AREA4
+    R8(config-if)#
+R8(config-if)# |  ip address 10.4.58.2 255.255.255.252
+    ip address 10.4.58.2 255.255.255.252
+    R8(config-if)#
+R8(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R8(config-if)#
+R8(config-if)# |  no shutdown
+    no shutdown
+    
+    R8(config-if)#
+R8(config)# |  exit
+    exit
+    R8(config)#
+R8(config-router)# | router ospf 1
+    router ospf 1
+    R8(config-router)#
+R8(config-router)# |  router-id 8.8.8.8
+    router-id 8.8.8.8
+    R8(config-router)#
+R8(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R8(config-router)#
+R8(config-router)# |  network 10.4.0.0 0.0.255.255 area 4
+    network 10.4.0.0 0.0.255.255 area 4
+    R8(config-router)#
+R8(config-router)# |  network 10.255.0.8 0.0.0.0 area 4
+    network 10.255.0.8 0.0.0.0 area 4
+    R8(config-router)#
+R8(config)# |  exit
+    exit
+    R8(config)#
+R8# | end
+    end
+    R8#
+R8# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R8#

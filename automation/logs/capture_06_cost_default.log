@@ -1,0 +1,12 @@
+capture 06_cost_default at 2026-10-30T16:19:39.877Z
+evidence/06_cost_default/R1__show_interfaces_GigabitEthernet0_0.txt  (1442 chars)
+evidence/06_cost_default/R1__show_interfaces_GigabitEthernet0_2.txt  (0 chars)
+evidence/06_cost_default/R2__show_interfaces_GigabitEthernet0_0.txt  (1442 chars)
+evidence/06_cost_default/R1__show_ip_ospf_interface_brief.txt  (386 chars)
+evidence/06_cost_default/R2__show_ip_ospf_interface_brief.txt  (473 chars)
+evidence/06_cost_default/R1__show_ip_route_ospf.txt  (1937 chars)
+evidence/06_cost_default/R1__show_ip_ospf_interface_GigabitEthernet0_0.txt  (848 chars)
+evidence/06_cost_default/R1__show_ip_ospf_database_router_1_1_1_1.txt  (116 chars)
+evidence/06_cost_default/R1__show_ip_ospf_database_router_2_2_2_2.txt  (116 chars)
+evidence/06_cost_default/R1__show_ip_ospf_database_network_10_0_0_1.txt  (119 chars)
+evidence/06_cost_default/R1__show_ip_route_10_1_10_0.txt  (444 chars)

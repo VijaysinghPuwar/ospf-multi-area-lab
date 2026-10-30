@@ -1,0 +1,18 @@
+# R1# show ip ospf database asbr-summary   (captured 2026-10-30T16:13:03.012Z)
+show ip ospf database asbr-summary
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+                Summary ASB Link States (Area 0)
+
+  LS age: 119
+  Options: (No TOS-capability, DC, Upward)
+  LS Type: Summary Links(AS Boundary Router)
+  Link State ID: 7.7.7.7 (AS Boundary Router address)
+  Advertising Router: 4.4.4.4
+  LS Seq Number: 80000002
+  Checksum: 0xc768
+  Length: 28
+  Network Mask: /0
+        TOS: 0  Metric: 1
+R1#

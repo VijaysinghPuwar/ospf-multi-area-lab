@@ -1,0 +1,6 @@
+capture 19_auth_both at 2026-10-30T16:34:40.891Z
+evidence/19_auth_both/R2__show_ip_ospf_neighbor.txt  (603 chars)
+evidence/19_auth_both/R2__show_ip_ospf_interface_GigabitEthernet0_1.txt  (1319 chars)
+evidence/19_auth_both/R2__show_ip_ospf_virtual_links.txt  (586 chars)
+evidence/19_auth_both/R8__show_ip_route.txt  (2275 chars)
+evidence/19_auth_both/R1__show_ip_route_ospf.txt  (1265 chars)

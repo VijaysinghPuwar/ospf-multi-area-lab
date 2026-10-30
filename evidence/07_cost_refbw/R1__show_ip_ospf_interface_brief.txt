@@ -1,0 +1,8 @@
+# R1# show ip ospf interface brief   (captured 2026-10-30T16:20:14.220Z)
+show ip ospf interface brief
+Interface     PID   Area                     IP Address/Mask          Cost  State  Nbrs F/C
+Gig0/0          1   0                         10.0.0.1/255.255.255.0   100     DR  0/0
+Lo0             1   0                     10.255.0.1/255.255.255.255   1     WAIT  0/0
+Gig0/2          1   0                      10.0.12.1/255.255.255.252   10   POINT  0/0
+
+R1#

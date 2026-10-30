@@ -1,0 +1,12 @@
+SUMMARY (stage2)
+SW-BB: sent 12, rejected 0, prompt 'SW-BB#'
+ISP: sent 17, rejected 0, prompt 'ISP#'
+PARTNER: sent 18, rejected 0, prompt 'PARTNER#'
+R1: sent 46, rejected 0, prompt 'R1#'
+R2: sent 47, rejected 0, prompt 'R2#'
+R3: sent 38, rejected 0, prompt 'R3#'
+R4: sent 37, rejected 0, prompt 'R4#'
+R5: sent 61, rejected 0, prompt 'R5#'
+R6: sent 29, rejected 0, prompt 'R6#'
+R7: sent 35, rejected 0, prompt 'R7#'
+R8: sent 27, rejected 0, prompt 'R8#'

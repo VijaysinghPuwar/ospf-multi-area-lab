@@ -1,0 +1,14 @@
+# step 16_virtual_link applied 2026-10-30T16:27:50.051Z
+R2(config)# router ospf 1
+   router ospf 1
+   R2(config-router)#
+R2(config)# area 1 virtual-link 5.5.5.5
+   area 1 virtual-link 5.5.5.5
+   R2(config-router)#
+R5(config)# router ospf 1
+   router ospf 1
+   R5(config-router)#
+R5(config)# area 1 virtual-link 2.2.2.2
+   area 1 virtual-link 2.2.2.2
+   R5(config-router)#
+rejected=0

@@ -1,0 +1,6 @@
+# R6# show ip ospf database summary 0.0.0.0   (captured 2026-10-30T16:22:33.062Z)
+show ip ospf database summary 0.0.0.0
+                                 ^
+% Invalid input detected at '^' marker.
+	
+R6#

@@ -1,0 +1,7 @@
+# R1# show ip route 172.16.0.0   (captured 2026-10-30T16:43:44.912Z)
+show ip route 172.16.0.0
+Routing entry for 172.16.0.0/24, 2 known subnets
+O       172.16.0.0 [110/20] via 10.0.12.2, 00:04:29, GigabitEthernet0/2
+O       172.16.1.0 [110/20] via 10.0.12.2, 00:04:29, GigabitEthernet0/2
+
+R1#

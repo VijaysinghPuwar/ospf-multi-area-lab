@@ -1,0 +1,8 @@
+capture 31_drills_a_restored at 2026-10-30T16:37:52.580Z
+evidence/31_drills_a_restored/R1__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/31_drills_a_restored/R2__show_ip_ospf_neighbor.txt  (603 chars)
+evidence/31_drills_a_restored/R3__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/31_drills_a_restored/R4__show_ip_ospf_neighbor.txt  (443 chars)
+evidence/31_drills_a_restored/R5__show_ip_ospf_neighbor.txt  (348 chars)
+evidence/31_drills_a_restored/R6__show_ip_ospf_neighbor.txt  (188 chars)
+evidence/31_drills_a_restored/R8__show_ip_ospf_neighbor.txt  (188 chars)

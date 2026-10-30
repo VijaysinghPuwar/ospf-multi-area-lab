@@ -1,0 +1,22 @@
+# R1# show ip ospf database network   (captured 2026-10-30T16:13:03.012Z)
+show ip ospf database network
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+                Net Link States (Area 0)
+
+  Routing Bit Set on this LSA
+  LS age: 94
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 10.0.0.4  (address of Designated Router)
+  Advertising Router: 4.4.4.4
+  LS Seq Number: 80000003
+  Checksum: 0x7e8d
+  Length: 40
+  Network Mask: /24
+        Attached Router: 1.1.1.1
+        Attached Router: 2.2.2.2
+        Attached Router: 3.3.3.3
+        Attached Router: 4.4.4.4
+R1#

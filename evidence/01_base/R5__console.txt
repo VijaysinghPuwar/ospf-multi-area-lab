@@ -1,0 +1,209 @@
+# R5 console buffer at 2026-10-30T16:13:03.012Z
+
+10.0.12.0       2.2.2.2         65          0x80000003 0x003a07
+10.255.0.2      2.2.2.2         65          0x80000004 0x00ba8c
+10.255.0.1      2.2.2.2         65          0x80000005 0x00cc79
+10.255.0.4      2.2.2.2         30          0x80000007 0x00aa96
+10.3.47.0       2.2.2.2         30          0x80000008 0x009381
+10.3.1.0        2.2.2.2         30          0x80000009 0x00a994
+10.255.0.7      2.2.2.2         30          0x8000000a 0x0090a9
+10.255.0.3      2.2.2.2         25          0x8000000b 0x00ac91
+10.2.36.0       2.2.2.2         25          0x8000000c 0x00110c
+10.2.10.0       2.2.2.2         25          0x8000000d 0x004ae7
+10.255.0.6      2.2.2.2         25          0x8000000e 0x0092a4
+
+                Summary ASB Link States (Area 1)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         2.2.2.2         65          0x80000001 0x001b36
+7.7.7.7         2.2.2.2         40          0x80000006 0x00fb38
+
+                Router Link States (Area 4)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+5.5.5.5         5.5.5.5         70          0x80000002 0x002548 2
+8.8.8.8         8.8.8.8         70          0x80000004 0x008991 4
+
+                Summary ASB Link States (Area 4)
+Link ID         ADV Router      Age         Seq#       Checksum
+1.1.1.1         5.5.5.5         65          0x80000001 0x00c084
+7.7.7.7         5.5.5.5         40          0x80000002 0x00a982
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+0.0.0.0         1.1.1.1         80          0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         79          0x80000001 0x00ef10 0
+172.16.0.0      7.7.7.7         80          0x80000001 0x007176 0
+172.16.1.0      7.7.7.7         79          0x80000001 0x006680 0
+R5#show ip protocols
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set 
+  Incoming update filter list for all interfaces is not set 
+  Router ID 5.5.5.5
+  Number of areas in this router is 2. 2 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    10.1.0.0 0.0.255.255 area 1
+    10.255.0.5 0.0.0.0 area 1
+    10.4.58.0 0.0.0.3 area 4
+  Passive Interface(s): 
+    GigabitEthernet0/2
+  Routing Information Sources:  
+    Gateway         Distance      Last Update 
+    2.2.2.2              110      00:01:10
+    5.5.5.5              110      00:01:10
+    8.8.8.8              110      00:01:10
+  Distance: (default is 110)
+
+R5#show ipv6 route ospf
+IPv6 Routing Table - 10 entries
+Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+       U - Per-user Static route, M - MIPv6
+       I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary
+       O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       D - EIGRP, EX - EIGRP external
+OI  2001:DB8::/64 [110/2]
+     via FE80::20D:BDFF:FEAA:9C02, GigabitEthernet0/0
+OI  2001:DB8:FFFF::1/128 [110/2]
+     via FE80::20D:BDFF:FEAA:9C02, GigabitEthernet0/0
+OI  2001:DB8:FFFF::2/128 [110/1]
+     via FE80::20D:BDFF:FEAA:9C02, GigabitEthernet0/0
+OI  2001:DB8:FFFF::3/128 [110/2]
+     via FE80::20D:BDFF:FEAA:9C02, GigabitEthernet0/0
+OI  2001:DB8:FFFF::4/128 [110/2]
+     via FE80::20D:BDFF:FEAA:9C02, GigabitEthernet0/0
+R5#show running-config
+Building configuration...
+
+Current configuration : 1820 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R5
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524D9NU-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.255.0.5 255.255.255.255
+!
+interface Loopback1
+ description BRANCH-NET-1
+ ip address 10.1.1.1 255.255.255.0
+ ip ospf network point-to-point
+ ip ospf priority 1
+!
+interface Loopback2
+ description BRANCH-NET-2
+ ip address 10.1.2.1 255.255.255.0
+ ip ospf network point-to-point
+ ip ospf priority 1
+!
+interface Loopback3
+ description BRANCH-NET-3 (left as default loopback type on purpose)
+ ip address 10.1.3.1 255.255.255.0
+!
+interface GigabitEthernet0/0
+ description TO-R2-AREA1
+ ip address 10.1.25.2 255.255.255.252
+ ip ospf network point-to-point
+ ip ospf priority 1
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:1:25::2/64
+ ipv6 ospf 1 area 1
+!
+interface GigabitEthernet0/1
+ description TO-R8-AREA4
+ ip address 10.4.58.1 255.255.255.252
+ ip ospf network point-to-point
+ ip ospf priority 1
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ description PC-A-LAN
+ ip address 10.1.10.1 255.255.255.0
+ duplex auto
+ speed auto
+ ipv6 address 2001:DB8:1:10::1/64
+ ipv6 ospf 1 area 1
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 5.5.5.5
+ log-adjacency-changes detail
+ passive-interface GigabitEthernet0/2
+ network 10.1.0.0 0.0.255.255 area 1
+ network 10.255.0.5 0.0.0.0 area 1
+ network 10.4.58.0 0.0.0.3 area 4
+!
+ipv6 router ospf 1
+ router-id 5.5.5.5
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/2
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+R5#

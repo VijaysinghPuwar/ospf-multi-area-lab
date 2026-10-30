@@ -1,0 +1,14 @@
+# R7# show ip ospf database   (captured 2026-10-30T16:26:52.137Z)
+show ip ospf database
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Router Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+4.4.4.4         4.4.4.4         38          0x80000009 0x005e19 2
+7.7.7.7         7.7.7.7         38          0x8000000a 0x0079ad 4
+
+                Summary Net Link States (Area 3)
+Link ID         ADV Router      Age         Seq#       Checksum
+0.0.0.0         4.4.4.4         42          0x8000004f 0x007f80
+R7#

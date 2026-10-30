@@ -1,0 +1,8 @@
+capture 15b_external_check at 2026-10-30T16:28:09.362Z
+evidence/15b_external_check/R1__show_ip_ospf_database_external.txt  (2193 chars)
+evidence/15b_external_check/R1__show_ip_ospf_database_asbr_summary.txt  (1306 chars)
+evidence/15b_external_check/R1__show_ip_ospf_border_routers.txt  (345 chars)
+evidence/15b_external_check/R7__show_ip_ospf_database.txt  (1839 chars)
+evidence/15b_external_check/R7__show_ip_ospf.txt  (966 chars)
+evidence/15b_external_check/R4__show_ip_ospf_border_routers.txt  (406 chars)
+evidence/15b_external_check/R1__show_ip_route_ospf.txt  (1054 chars)

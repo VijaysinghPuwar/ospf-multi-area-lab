@@ -1,0 +1,21 @@
+# R1# show ipv6 ospf interface GigabitEthernet0/0   (captured 2026-10-30T16:34:52.084Z)
+show ipv6 ospf interface GigabitEthernet0/0
+GigabitEthernet0/0 is up, line protocol is up
+  Link Local Address FE80::201:C7FF:FE47:6A01, Interface ID 1
+  Area 0, Process ID 1, Instance ID 0, Router ID 1.1.1.1
+  Network Type BROADCAST, Cost: 1
+  Transmit Delay is 1 sec, State DROTHER, Priority 1
+  Designated Router (ID) 4.4.4.4, local address FE80::201:C7FF:FE47:6A01
+  Backup Designated Router (ID) 3.3.3.3, local address FE80::201:C7FF:FE47:6A01
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    Hello due in 00:00:05
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 3, Adjacent neighbor count is 3
+    Adjacent with neighbor 2.2.2.2
+    Adjacent with neighbor 3.3.3.3  (Backup Designated Router)
+    Adjacent with neighbor 4.4.4.4  (Designated Router)
+  Suppress hello for 0 neighbor(s)
+R1#

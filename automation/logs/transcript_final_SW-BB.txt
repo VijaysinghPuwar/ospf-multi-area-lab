@@ -1,0 +1,67 @@
+Switch# | enable
+    enable
+    Switch#
+Switch(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Switch(config)#
+SW-BB(config)# | hostname SW-BB
+    hostname SW-BB
+    SW-BB(config)#
+SW-BB(config)# | no ip domain-lookup
+    no ip domain-lookup
+    SW-BB(config)#
+SW-BB(config-if-range)# | interface range FastEthernet0/1 - 4
+    interface range FastEthernet0/1 - 4
+    SW-BB(config-if-range)#
+SW-BB(config-if-range)# |  description BACKBONE-LAN router port
+    description BACKBONE-LAN router port
+    SW-BB(config-if-range)#
+SW-BB(config-if-range)# |  switchport mode access
+    switchport mode access
+    SW-BB(config-if-range)#
+SW-BB(config-if-range)# |  switchport access vlan 1
+    switchport access vlan 1
+    SW-BB(config-if-range)#
+SW-BB(config-if-range)# |  spanning-tree portfast
+    spanning-tree portfast
+    %Warning: portfast should only be enabled on ports connected to a single
+    host. Connecting hubs, concentrators, switches, bridges, etc... to this
+    interface  when portfast is enabled, can cause temporary bridging loops.
+    Use with CAUTION
+    
+    %Portfast has been configured on FastEthernet0/1 but will only
+    have effect when the interface is in a non-trunking mode.
+    %Warning: portfast should only be enabled on ports connected to a single
+    host. Connecting hubs, concentrators, switches, bridges, etc... to this
+    interface  when portfast is enabled, can cause temporary bridging loops.
+    Use with CAUTION
+    
+    %Portfast has been configured on FastEthernet0/2 but will only
+    have effect when the interface is in a non-trunking mode.
+    %Warning: portfast should only be enabled on ports connected to a single
+    host. Connecting hubs, concentrators, switches, bridges, etc... to this
+    interface  when portfast is enabled, can cause temporary bridging loops.
+    Use with CAUTION
+    
+    %Portfast has been configured on FastEthernet0/3 but will only
+    have effect when the interface is in a non-trunking mode.
+    %Warning: portfast should only be enabled on ports connected to a single
+    host. Connecting hubs, concentrators, switches, bridges, etc... to this
+    interface  when portfast is enabled, can cause temporary bridging loops.
+    Use with CAUTION
+    
+    %Portfast has been configured on FastEthernet0/4 but will only
+    have effect when the interface is in a non-trunking mode.
+    SW-BB(config-if-range)#
+SW-BB(config)# |  exit
+    exit
+    SW-BB(config)#
+SW-BB# | end
+    end
+    SW-BB#
+SW-BB# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    SW-BB#

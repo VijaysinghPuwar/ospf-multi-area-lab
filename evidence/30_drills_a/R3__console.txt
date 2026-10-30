@@ -1,0 +1,74 @@
+# R3 console buffer at 2026-10-30T16:36:46.664Z
+
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on GigabitEthernet0/1 from EXCHANGE to LOADING, Exchange Done
+
+00:00:10: %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on GigabitEthernet0/1 from LOADING to FULL, Loading Done
+
+00:00:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:00:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from EXCHANGE to LOADING, Exchange Done
+
+00:00:40: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:40: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from 2WAY to EXSTART, AdjOK?
+
+00:00:40: %OSPFv3-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:40: %OSPFv3-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:40: %OSPFv3-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+00:00:45: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXSTART to EXCHANGE, Negotiation Done
+
+00:00:45: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from EXCHANGE to FULL, Exchange Done
+
+00:00:45: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+terminal length 0
+            ^
+% Invalid input detected at '^' marker.
+	
+R3#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6           0   FULL/  -        00:00:31    10.2.36.2       GigabitEthernet0/1
+1.1.1.1         100   FULL/DR         00:00:31    10.0.0.1        GigabitEthernet0/0
+2.2.2.2          50   FULL/BDR        00:00:31    10.0.0.2        GigabitEthernet0/0
+4.4.4.4           0   2WAY/DROTHER    00:00:31    10.0.0.4        GigabitEthernet0/0
+R3#show ip route ospf
+     10.0.0.0/8 is variably subnetted, 16 subnets, 4 masks
+O       10.0.12.0 [110/110] via 10.0.0.2, 00:01:08, GigabitEthernet0/0
+                  [110/110] via 10.0.0.1, 00:01:08, GigabitEthernet0/0
+O IA    10.1.0.0 [110/110] via 10.0.0.2, 00:01:08, GigabitEthernet0/0
+O       10.2.10.0 [110/110] via 10.2.36.2, 00:01:38, GigabitEthernet0/1
+O IA    10.3.1.0 [110/111] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O IA    10.3.47.0 [110/110] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O       10.255.0.1 [110/101] via 10.0.0.1, 00:01:08, GigabitEthernet0/0
+O       10.255.0.2 [110/101] via 10.0.0.2, 00:01:08, GigabitEthernet0/0
+O       10.255.0.4 [110/101] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O IA    10.255.0.5 [110/111] via 10.0.0.2, 00:01:08, GigabitEthernet0/0
+O       10.255.0.6 [110/11] via 10.2.36.2, 00:01:38, GigabitEthernet0/1
+O IA    10.255.0.7 [110/111] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+     172.16.0.0/24 is subnetted, 2 subnets
+O E2    172.16.0.0 [110/20] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O E2    172.16.1.0 [110/20] via 10.0.0.4, 00:00:58, GigabitEthernet0/0
+O E1 203.0.113.0 [110/120] via 10.0.0.1, 00:01:08, GigabitEthernet0/0
+O*E2 0.0.0.0/0 [110/1] via 10.0.0.1, 00:01:08, GigabitEthernet0/0
+
+R3#show ip ospf interface brief
+Interface     PID   Area                     IP Address/Mask          Cost  State  Nbrs F/C
+Gig0/1          1   2                      10.2.36.1/255.255.255.252   10   POINT  0/0
+Gig0/0          1   0                         10.0.0.3/255.255.255.0   100  DROTH  0/0
+Lo0             1   0                     10.255.0.3/255.255.255.255   1     WAIT  0/0
+
+R3#
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to DOWN, Neighbor Down: Dead timer expired
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet0/0 from 2WAY to DOWN, Neighbor Down: Interface down or detached
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Dead timer expired
+
+00:07:00: %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on GigabitEthernet0/1 from FULL to DOWN, Neighbor Down: Interface down or detached

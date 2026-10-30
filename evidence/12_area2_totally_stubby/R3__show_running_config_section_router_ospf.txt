@@ -1,0 +1,14 @@
+# R3# show running-config | section router ospf   (captured 2026-10-30T16:24:43.222Z)
+show running-config | section router ospf
+router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes detail
+ area 2 stub no-summary
+ auto-cost reference-bandwidth 10000
+ network 10.0.0.0 0.0.0.255 area 0
+ network 10.255.0.3 0.0.0.0 area 0
+ network 10.2.36.0 0.0.0.3 area 2
+ipv6 router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+R3#

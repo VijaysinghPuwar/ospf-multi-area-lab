@@ -1,0 +1,60 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+PARTNER(config)# | hostname PARTNER
+    hostname PARTNER
+    PARTNER(config)#
+PARTNER(config)# | no ip domain-lookup
+    no ip domain-lookup
+    PARTNER(config)#
+PARTNER(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    PARTNER(config-if)#
+PARTNER(config-if)# |  description TO-R7
+    description TO-R7
+    PARTNER(config-if)#
+PARTNER(config-if)# |  ip address 192.168.100.2 255.255.255.252
+    ip address 192.168.100.2 255.255.255.252
+    PARTNER(config-if)#
+PARTNER(config-if)# |  no shutdown
+    no shutdown
+    
+    PARTNER(config-if)#
+PARTNER(config)# |  exit
+    exit
+    PARTNER(config)#
+PARTNER(config-if)# | interface Loopback1
+    interface Loopback1
+    
+    PARTNER(config-if)#
+PARTNER(config-if)# |  ip address 172.16.0.1 255.255.255.0
+    ip address 172.16.0.1 255.255.255.0
+    PARTNER(config-if)#
+PARTNER(config)# |  exit
+    exit
+    PARTNER(config)#
+PARTNER(config-if)# | interface Loopback2
+    interface Loopback2
+    
+    PARTNER(config-if)#
+PARTNER(config-if)# |  ip address 172.16.1.1 255.255.255.0
+    ip address 172.16.1.1 255.255.255.0
+    PARTNER(config-if)#
+PARTNER(config)# |  exit
+    exit
+    PARTNER(config)#
+PARTNER(config)# | ip route 0.0.0.0 0.0.0.0 192.168.100.1
+    ip route 0.0.0.0 0.0.0.0 192.168.100.1
+    PARTNER(config)#
+PARTNER# | end
+    end
+    PARTNER#
+PARTNER# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    PARTNER#

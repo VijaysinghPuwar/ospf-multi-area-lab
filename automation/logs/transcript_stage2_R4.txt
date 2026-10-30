@@ -1,0 +1,120 @@
+Router# | enable
+    enable
+    Router#
+Router(config)# | configure terminal
+    configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#
+R4(config)# | hostname R4
+    hostname R4
+    R4(config)#
+R4(config)# | no ip domain-lookup
+    no ip domain-lookup
+    R4(config)#
+R4(config)# | ipv6 unicast-routing
+    ipv6 unicast-routing
+    R4(config)#
+R4(config-rtr)# | ipv6 router ospf 1
+    ipv6 router ospf 1
+    %OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router-id,please configure manually
+    R4(config-rtr)#
+R4(config-rtr)# |  router-id 4.4.4.4
+    router-id 4.4.4.4
+    R4(config-rtr)#
+R4(config)# |  exit
+    exit
+    R4(config)#
+R4(config-if)# | interface Loopback0
+    interface Loopback0
+    
+    R4(config-if)#
+R4(config-if)# |  ip address 10.255.0.4 255.255.255.255
+    ip address 10.255.0.4 255.255.255.255
+    R4(config-if)#
+R4(config-if)# |  ipv6 address 2001:db8:ffff::4/128
+    ipv6 address 2001:db8:ffff::4/128
+    R4(config-if)#
+R4(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R4(config-if)#
+R4(config)# |  exit
+    exit
+    R4(config)#
+R4(config-if)# | interface GigabitEthernet0/0
+    interface GigabitEthernet0/0
+    R4(config-if)#
+R4(config-if)# |  description BACKBONE-LAN
+    description BACKBONE-LAN
+    R4(config-if)#
+R4(config-if)# |  ip ospf priority 0
+    ip ospf priority 0
+    R4(config-if)#
+R4(config-if)# |  ip address 10.0.0.4 255.255.255.0
+    ip address 10.0.0.4 255.255.255.0
+    R4(config-if)#
+R4(config-if)# |  ipv6 address 2001:db8::4/64
+    ipv6 address 2001:db8::4/64
+    R4(config-if)#
+R4(config-if)# |  ipv6 ospf 1 area 0
+    ipv6 ospf 1 area 0
+    R4(config-if)#
+R4(config-if)# |  no shutdown
+    no shutdown
+    
+    R4(config-if)#
+R4(config)# |  exit
+    exit
+    R4(config)#
+R4(config-if)# | interface GigabitEthernet0/1
+    interface GigabitEthernet0/1
+    R4(config-if)#
+R4(config-if)# |  description TO-R7-AREA3
+    description TO-R7-AREA3
+    R4(config-if)#
+R4(config-if)# |  ip address 10.3.47.1 255.255.255.252
+    ip address 10.3.47.1 255.255.255.252
+    R4(config-if)#
+R4(config-if)# |  ip ospf network point-to-point
+    ip ospf network point-to-point
+    R4(config-if)#
+R4(config-if)# |  no shutdown
+    no shutdown
+    
+    R4(config-if)#
+R4(config)# |  exit
+    exit
+    R4(config)#
+R4(config-router)# | router ospf 1
+    router ospf 1
+    R4(config-router)#
+R4(config-router)# |  router-id 4.4.4.4
+    router-id 4.4.4.4
+    R4(config-router)#
+R4(config-router)# |  log-adjacency-changes detail
+    log-adjacency-changes detail
+    R4(config-router)#
+R4(config-router)# |  auto-cost reference-bandwidth 10000
+    auto-cost reference-bandwidth 10000
+    % OSPF: Reference bandwidth is changed.
+            Please ensure reference bandwidth is consistent across all routers.
+    R4(config-router)#
+R4(config-router)# |  network 10.0.0.0 0.0.0.255 area 0
+    network 10.0.0.0 0.0.0.255 area 0
+    R4(config-router)#
+R4(config-router)# |  network 10.255.0.4 0.0.0.0 area 0
+    network 10.255.0.4 0.0.0.0 area 0
+    R4(config-router)#
+R4(config-router)# |  network 10.3.47.0 0.0.0.3 area 3
+    network 10.3.47.0 0.0.0.3 area 3
+    R4(config-router)#
+R4(config)# |  exit
+    exit
+    R4(config)#
+R4# | end
+    end
+    R4#
+R4# | write memory
+    write memory
+    Building configuration...
+    [OK]
+    R4#

@@ -1,0 +1,37 @@
+# R7# show ip ospf database   (captured 2026-10-30T16:28:09.362Z)
+show ip ospf database
+            OSPF Router with ID (7.7.7.7) (Process ID 1)
+
+                Router Link States (Area 3)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+7.7.7.7         7.7.7.7         55          0x8000000c 0x0075af 4
+4.4.4.4         4.4.4.4         55          0x8000000b 0x005a1b 2
+
+                Summary Net Link States (Area 3)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.255.0.4      4.4.4.4         43          0x80000054 0x00c923
+10.0.0.0        4.4.4.4         43          0x80000055 0x00d1ba
+10.255.0.3      4.4.4.4         38          0x80000057 0x00b9cc
+10.0.12.0       4.4.4.4         38          0x80000058 0x0099dc
+10.255.0.2      4.4.4.4         38          0x80000059 0x00bfc5
+10.255.0.1      4.4.4.4         38          0x8000005a 0x00c7bd
+10.2.36.0       4.4.4.4         38          0x8000005b 0x0072e6
+10.255.0.5      4.4.4.4         38          0x8000005c 0x00ff75
+10.2.10.0       4.4.4.4         38          0x8000005d 0x008b7e
+10.255.0.6      4.4.4.4         38          0x8000005e 0x00f180
+10.1.0.0        4.4.4.4         38          0x8000005f 0x001661
+
+                Summary ASB Link States (Area 3)
+Link ID         ADV Router      Age         Seq#       Checksum
+7.7.7.7         4.4.4.4         48          0x80000051 0x0029b7
+4.4.4.4         4.4.4.4         48          0x80000053 0x000ad7
+1.1.1.1         4.4.4.4         38          0x80000056 0x00167a
+
+                Type-5 AS External Link States
+Link ID         ADV Router      Age         Seq#       Checksum Tag
+172.16.0.0      7.7.7.7         49          0x80000002 0x006f77 0
+172.16.1.0      7.7.7.7         48          0x80000002 0x006481 0
+0.0.0.0         1.1.1.1         1022        0x80000001 0x00fecf 1
+203.0.113.0     1.1.1.1         612         0x80000002 0x00ed11 0
+R7#

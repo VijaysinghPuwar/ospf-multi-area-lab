@@ -1,0 +1,209 @@
+version: show version | include IOS Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2) Router#
+ok      configure terminal  =>  configure terminal Enter configuration commands, one per line. End with CNTL/Z. Router(config)#
+ok      interface GigabitEthernet0/0  =>  interface GigabitEthernet0/0 Router(config-if)#
+ok      ip address 10.9.9.1 255.255.255.0  =>  ip address 10.9.9.1 255.255.255.0 Router(config-if)#
+ok      no shutdown  =>  no shutdown Router(config-if)#
+ok      ip ospf priority 100  =>  ip ospf priority 100 Router(config-if)#
+ok      ip ospf network point-to-point  =>  ip ospf network point-to-point Router(config-if)#
+REJECT  ip ospf network broadcast  =>  ip ospf network broadcast ^ % Invalid input detected at '^' marker. Router(config-if)#
+REJECT  ip ospf network non-broadcast  =>  ip ospf network non-broadcast ^ % Invalid input detected at '^' marker. Router(config-if)#
+REJECT  ip ospf network point-to-multipoint  =>  ip ospf network point-to-multipoint ^ % Invalid input detected at '^' marker. Router(config-if)#
+REJECT  ip ospf network broadcast  =>  ip ospf network broadcast ^ % Invalid input detected at '^' marker. Router(config-if)#
+ok      ip ospf hello-interval 5  =>  ip ospf hello-interval 5 Router(config-if)#
+ok      ip ospf dead-interval 20  =>  ip ospf dead-interval 20 Router(config-if)#
+REJECT  ip ospf dead-interval minimal hello-multiplier 4  =>  ip ospf dead-interval minimal hello-multiplier 4 ^ % Invalid input detected at '^' marker. Router(config-if)#
+ok      no ip ospf dead-interval  =>  no ip ospf dead-interval Router(config-if)#
+ok      no ip ospf hello-interval  =>  no ip ospf hello-interval Router(config-if)#
+ok      ip ospf cost 50  =>  ip ospf cost 50 Router(config-if)#
+ok      no ip ospf cost  =>  no ip ospf cost Router(config-if)#
+ok      ip ospf authentication message-digest  =>  ip ospf authentication message-digest Router(config-if)#
+ok      ip ospf message-digest-key 1 md5 TestKey1  =>  ip ospf message-digest-key 1 md5 TestKey1 Router(config-if)#
+ok      ip ospf authentication  =>  ip ospf authentication Router(config-if)#
+ok      ip ospf authentication-key Plain1  =>  ip ospf authentication-key Plain1 Router(config-if)#
+ok      ip ospf authentication null  =>  ip ospf authentication null Router(config-if)#
+ok      no ip ospf authentication  =>  no ip ospf authentication Router(config-if)#
+REJECT  ip ospf authentication key-chain KC1  =>  ip ospf authentication key-chain KC1 ^ % Invalid input detected at '^' marker. Router(config-if)#
+ok      ip mtu 1400  =>  ip mtu 1400 Router(config-if)#
+ok      no ip mtu  =>  no ip mtu Router(config-if)#
+REJECT  ip ospf mtu-ignore  =>  ip ospf mtu-ignore ^ % Invalid input detected at '^' marker. Router(config-if)#
+REJECT  no ip ospf mtu-ignore  =>  no ip ospf mtu-ignore ^ % Invalid input detected at '^' marker. Router(config-if)#
+ok      ip ospf 1 area 0  =>  ip ospf 1 area 0 Router(config-if)#
+ok      no ip ospf 1 area 0  =>  no ip ospf 1 area 0 Router(config-if)#
+REJECT  bfd interval 50 min_rx 50 multiplier 3  =>  bfd interval 50 min_rx 50 multiplier 3 ^ % Invalid input detected at '^' marker. Router(config-if)#
+REJECT  ip ospf bfd  =>  ip ospf bfd ^ % Invalid input detected at '^' marker. Router(config-if)#
+ok      ipv6 address 2001:db8:9::1/64  =>  ipv6 address 2001:db8:9::1/64 Router(config-if)#
+ok      ipv6 ospf 1 area 0  =>  ipv6 ospf 1 area 0 % IPv6 routing not enabled Router(config-if)#
+ok      ipv6 ospf priority 5  =>  ipv6 ospf priority 5 Router(config-if)#
+ok      ipv6 ospf cost 7  =>  ipv6 ospf cost 7 Router(config-if)#
+ok      exit  =>  exit Router(config)#
+ok      key chain KC1  =>  key chain KC1 Router(config-keychain)#
+ok      key 1  =>  key 1 Router(config-keychain-key)#
+ok      key-string Abc  =>  key-string Abc Router(config-keychain-key)#
+REJECT  cryptographic-algorithm hmac-sha-256  =>  cryptographic-algorithm hmac-sha-256 ^ % Invalid input detected at '^' marker. Router(config-keychain-key)#
+ok      exit  =>  exit Router(config-keychain)#
+ok      exit  =>  exit Router(config)#
+ok      ipv6 unicast-routing  =>  ipv6 unicast-routing Router(config)#
+ok      ipv6 router ospf 1  =>  ipv6 router ospf 1 Router(config-rtr)#
+ok      router-id 9.9.9.9  =>  router-id 9.9.9.9 Router(config-rtr)#
+ok      area 1 stub  =>  area 1 stub Router(config-rtr)#
+ok      exit  =>  exit Router(config)#
+ok      router ospf 1  =>  router ospf 1 Router(config-router)#
+ok      router-id 9.9.9.9  =>  router-id 9.9.9.9 Router(config-router)#
+ok      log-adjacency-changes  =>  log-adjacency-changes Router(config-router)#
+ok      log-adjacency-changes detail  =>  log-adjacency-changes detail Router(config-router)#
+ok      auto-cost reference-bandwidth 10000  =>  auto-cost reference-bandwidth 10000 % OSPF: Reference bandwidth is changed. Please ensure reference bandwidth is consistent across all routers. Router(config-ro
+REJECT  maximum-paths 8  =>  maximum-paths 8 ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      passive-interface default  =>  passive-interface default Router(config-router)#
+ok      no passive-interface default  =>  no passive-interface default Router(config-router)#
+ok      passive-interface GigabitEthernet0/1  =>  passive-interface GigabitEthernet0/1 Router(config-router)#
+ok      network 10.9.9.0 0.0.0.255 area 0  =>  network 10.9.9.0 0.0.0.255 area 0 Router(config-router)#
+ok      area 1 stub  =>  area 1 stub Router(config-router)#
+ok      area 1 stub no-summary  =>  area 1 stub no-summary Router(config-router)#
+ok      no area 1 stub  =>  no area 1 stub Router(config-router)#
+ok      area 2 nssa  =>  area 2 nssa Router(config-router)#
+ok      area 2 nssa no-summary  =>  area 2 nssa no-summary Router(config-router)#
+REJECT  area 2 nssa default-information-originate  =>  area 2 nssa default-information-originate ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      no area 2 nssa  =>  no area 2 nssa Router(config-router)#
+ok      area 3 range 10.3.0.0 255.255.0.0  =>  area 3 range 10.3.0.0 255.255.0.0 Router(config-router)#
+REJECT  area 3 range 10.4.0.0 255.255.0.0 not-advertise  =>  area 3 range 10.4.0.0 255.255.0.0 not-advertise ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  area 3 range 10.5.0.0 255.255.0.0 cost 50  =>  area 3 range 10.5.0.0 255.255.0.0 cost 50 ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      area 4 virtual-link 4.4.4.4  =>  area 4 virtual-link 4.4.4.4 Router(config-router)#
+REJECT  area 4 virtual-link 4.4.4.4 hello-interval 5  =>  area 4 virtual-link 4.4.4.4 hello-interval 5 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  area 4 virtual-link 4.4.4.4 authentication message-digest  =>  area 4 virtual-link 4.4.4.4 authentication message-digest ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  area 4 virtual-link 4.4.4.4 message-digest-key 1 md5 VLkey  =>  area 4 virtual-link 4.4.4.4 message-digest-key 1 md5 VLkey ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      area 0 authentication message-digest  =>  area 0 authentication message-digest Router(config-router)#
+ok      no area 0 authentication  =>  no area 0 authentication Router(config-router)#
+ok      area 5 default-cost 20  =>  area 5 default-cost 20 Router(config-router)#
+REJECT  summary-address 172.16.0.0 255.255.254.0  =>  summary-address 172.16.0.0 255.255.254.0 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  summary-address 172.17.0.0 255.255.0.0 not-advertise  =>  summary-address 172.17.0.0 255.255.0.0 not-advertise ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      redistribute static subnets  =>  redistribute static subnets Router(config-router)#
+REJECT  redistribute static subnets metric-type 1  =>  redistribute static subnets metric-type 1 ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      redistribute static metric 50 metric-type 1 subnets  =>  redistribute static metric 50 metric-type 1 subnets Router(config-router)#
+ok      redistribute connected subnets  =>  redistribute connected subnets Router(config-router)#
+ok      redistribute rip subnets  =>  redistribute rip subnets Router(config-router)#
+ok      default-information originate  =>  default-information originate Router(config-router)#
+REJECT  default-information originate always metric 10 metric-type 1  =>  default-information originate always metric 10 metric-type 1 ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      distance 115  =>  distance 115 Router(config-router)#
+ok      distance ospf external 150  =>  distance ospf external 150 Router(config-router)#
+REJECT  no distance ospf external 150  =>  no distance ospf external 150 ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      no distance 115  =>  no distance 115 Router(config-router)#
+REJECT  area 1 filter-list prefix PL1 in  =>  area 1 filter-list prefix PL1 in ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  distribute-list prefix PL1 in  =>  distribute-list prefix PL1 in ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  distribute-list 10 in  =>  distribute-list 10 in ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  no distribute-list 10 in  =>  no distribute-list 10 in ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  timers throttle spf 10 100 5000  =>  timers throttle spf 10 100 5000 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  timers throttle lsa 10 100 5000  =>  timers throttle lsa 10 100 5000 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  timers lsa arrival 50  =>  timers lsa arrival 50 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  timers spf 5 10  =>  timers spf 5 10 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  compatible rfc1583  =>  compatible rfc1583 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  no compatible rfc1583  =>  no compatible rfc1583 ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  bfd all-interfaces  =>  bfd all-interfaces ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  max-metric router-lsa  =>  max-metric router-lsa ^ % Invalid input detected at '^' marker. Router(config-router)#
+REJECT  no max-metric router-lsa  =>  no max-metric router-lsa ^ % Invalid input detected at '^' marker. Router(config-router)#
+ok      end  =>  end Router#
+ok      show ip ospf  =>  show ip ospf Routing Process "ospf 1" with ID 9.9.9.9 Supports only single TOS(TOS0) routes Supports opaque LSA It is an autonomous system boundary router It is an area border router SPF schedule delay 5 secs, Hold time between two SPFs 10 secs Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs Number of external LSA 0. Checksum Sum 0x000000 Number of opaque AS LSA 0. Checksum Sum 0x000000 Nu
+ok      show ip ospf interface brief  =>  show ip ospf interface brief Router#
+ok      show ip ospf interface GigabitEthernet0/0  =>  show ip ospf interface GigabitEthernet0/0 %OSPF: OSPF not enabled on GigabitEthernet0/0 Router#
+ok      show ip ospf neighbor  =>  show ip ospf neighbor Router#
+ok      show ip ospf neighbor detail  =>  show ip ospf neighbor detail Router#
+ok      show ip ospf database  =>  show ip ospf database OSPF Router with ID (9.9.9.9) (Process ID 1) Router Link States (Area 0) Link ID ADV Router Age Seq# Checksum Link count 9.9.9.9 9.9.9.9 0 0x80000002 0x00f523 0 Router Link States (Area 1) Link ID ADV Router Age Seq# Checksum Link count 9.9.9.9 9.9.9.9 0 0x80000001 0x00f722 0 Summary Net Link States (Area 1) Link ID ADV Router Age Seq# Checksum 0.0.0.0 9.9.9.9 0 0x80000001 0x
+ok      show ip ospf database router  =>  show ip ospf database router OSPF Router with ID (9.9.9.9) (Process ID 1) Router Link States (Area 0) LS age: 0 Options: (No TOS-capability, DC) LS Type: Router Links Link State ID: 9.9.9.9 Advertising Router: 9.9.9.9 LS Seq Number: 80000002 Checksum: 0xf523 Length: 24 Area Border Router AS Boundary Router Number of Links: 0 Router Link States (Area 1) LS age: 0 Options: (No TOS-capability, DC) LS
+ok      show ip ospf database network  =>  show ip ospf database network OSPF Router with ID (9.9.9.9) (Process ID 1) Router#
+ok      show ip ospf database summary  =>  show ip ospf database summary OSPF Router with ID (9.9.9.9) (Process ID 1) Summary Net Link States (Area 1) LS age: 0 Options: (No TOS-capability, DC, Upward) LS Type: Summary Links(Network) Link State ID: 0.0.0.0 (summary Network Number) Advertising Router: 9.9.9.9 LS Seq Number: 80000001 Checksum: 0x84b5 Length: 28 Network Mask: /0 TOS: 0 Metric: 1 Summary Net Link States (Area 2) LS age: 0 Opti
+ok      show ip ospf database asbr-summary  =>  show ip ospf database asbr-summary OSPF Router with ID (9.9.9.9) (Process ID 1) Router#
+ok      show ip ospf database external  =>  show ip ospf database external OSPF Router with ID (9.9.9.9) (Process ID 1) Router#
+REJECT  show ip ospf database nssa-external  =>  show ip ospf database nssa-external ^ % Invalid input detected at '^' marker. Router#
+REJECT  show ip ospf database self-originate  =>  show ip ospf database self-originate ^ % Invalid input detected at '^' marker. Router#
+ok      show ip ospf border-routers  =>  show ip ospf border-routers OSPF Process 1 internal Routing Table Codes: i - Intra-area route, I - Inter-area route Router#
+ok      show ip ospf virtual-links  =>  show ip ospf virtual-links Virtual Link OSPF_VL0 to router 4.4.4.4 is down Run as demand circuit DoNotAge LSA allowed. Transit area 4 Topology-MTID Cost Disabled Shutdown Topology Name 0 65535 no no Base Transmit Delay is 1 sec, State DOWN, Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5 Router#
+REJECT  show ip ospf summary-address  =>  show ip ospf summary-address ^ % Invalid input detected at '^' marker. Router#
+ok      show ip protocols  =>  show ip protocols Routing Protocol is "ospf 1" Outgoing update filter list for all interfaces is not set Incoming update filter list for all interfaces is not set Router ID 9.9.9.9 It is an autonomous system boundary router Redistributing External Routes from, rip static connected Number of areas in this router is 6. 6 normal 0 stub 0 nssa Maximum path: 4 Routing for Networks: 10.9.9.0 0.0.0.255 a
+ok      show ip route ospf  =>  show ip route ospf Router#
+ok      show ipv6 ospf  =>  show ipv6 ospf Routing Process "ospfv3 1" with ID 9.9.9.9 SPF schedule delay 5 secs, Hold time between two SPFs 10 secs Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs LSA group pacing timer 240 secs Interface flood pacing timer 33 msecs Retransmission pacing timer 66 msecs Number of external LSA 0. Checksum Sum 0x000000 Number of areas in this router is 1. 0 normal 1 stub 0 nssa Reference
+ok      show ipv6 ospf neighbor  =>  show ipv6 ospf neighbor Router#
+ok      show ipv6 ospf database  =>  show ipv6 ospf database OSPF Router with ID (9.9.9.9) (Process ID 1) Router#
+ok      show ipv6 route ospf  =>  show ipv6 route ospf IPv6 Routing Table - 1 entries Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP U - Per-user Static route, M - MIPv6 I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary O - OSPF intra, OI - OSPF inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2 ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2 D - EIGRP, EX - EIGRP external Router#
+ok      show ipv6 ospf interface brief  =>  show ipv6 ospf interface brief Router#
+REJECT  show ip ospf statistics  =>  show ip ospf statistics ^ % Invalid input detected at '^' marker. Router#
+REJECT  show ip ospf events  =>  show ip ospf events ^ % Invalid input detected at '^' marker. Router#
+REJECT  show ip ospf traffic  =>  show ip ospf traffic ^ % Invalid input detected at '^' marker. Router#
+ok      debug ip ospf adj  =>  debug ip ospf adj OSPF adjacency events debugging is on Router#
+REJECT  debug ip ospf hello  =>  debug ip ospf hello ^ % Invalid input detected at '^' marker. Router#
+ok      debug ip ospf events  =>  debug ip ospf events OSPF events debugging is on Router#
+REJECT  debug ip ospf packet  =>  debug ip ospf packet ^ % Invalid input detected at '^' marker. Router#
+ok      undebug all  =>  undebug all All possible debugging has been turned off Router#
+ok      clear ip ospf process  =>  clear ip ospf process Reset ALL OSPF processes? [no]: <answered yes>
+
+ACCEPTED 90
+REJECTED 44:
+  ip ospf network broadcast
+  ip ospf network non-broadcast
+  ip ospf network point-to-multipoint
+  ip ospf network broadcast
+  ip ospf dead-interval minimal hello-multiplier 4
+  ip ospf authentication key-chain KC1
+  ip ospf mtu-ignore
+  no ip ospf mtu-ignore
+  bfd interval 50 min_rx 50 multiplier 3
+  ip ospf bfd
+  cryptographic-algorithm hmac-sha-256
+  maximum-paths 8
+  area 2 nssa default-information-originate
+  area 3 range 10.4.0.0 255.255.0.0 not-advertise
+  area 3 range 10.5.0.0 255.255.0.0 cost 50
+  area 4 virtual-link 4.4.4.4 hello-interval 5
+  area 4 virtual-link 4.4.4.4 authentication message-digest
+  area 4 virtual-link 4.4.4.4 message-digest-key 1 md5 VLkey
+  summary-address 172.16.0.0 255.255.254.0
+  summary-address 172.17.0.0 255.255.0.0 not-advertise
+  redistribute static subnets metric-type 1
+  default-information originate always metric 10 metric-type 1
+  no distance ospf external 150
+  area 1 filter-list prefix PL1 in
+  distribute-list prefix PL1 in
+  distribute-list 10 in
+  no distribute-list 10 in
+  timers throttle spf 10 100 5000
+  timers throttle lsa 10 100 5000
+  timers lsa arrival 50
+  timers spf 5 10
+  compatible rfc1583
+  no compatible rfc1583
+  bfd all-interfaces
+  max-metric router-lsa
+  no max-metric router-lsa
+  show ip ospf database nssa-external
+  show ip ospf database self-originate
+  show ip ospf summary-address
+  show ip ospf statistics
+  show ip ospf events
+  show ip ospf traffic
+  debug ip ospf hello
+  debug ip ospf packet
+
+running-config ospf section:
+show running-config | section ospf
+ ip ospf authentication-key Plain1
+ ip ospf message-digest-key 1 md5 TestKey1
+ ip ospf network point-to-point
+ ip ospf priority 100
+ ipv6 ospf cost 7
+ ipv6 ospf priority 5
+router ospf 1
+ router-id 9.9.9.9
+ log-adjacency-changes detail
+ area 3 range 10.3.0.0 255.255.0.0
+ area 4 virtual-link 4.4.4.4
+ redistribute rip subnets 
+ redistribute static metric 50 metric-type 1 subnets 
+ redistribute connected subnets 
+ passive-interface GigabitEthernet0/1
+ auto-cost reference-bandwidth 10000
+ network 10.9.9.0 0.0.0.255 area 0
+ default-information originate
+ipv6 router ospf 1
+ router-id 9.9.9.9
+ log-adjacency-changes
+ area 1 stub
+Router#
+probe router removed; devices now 1

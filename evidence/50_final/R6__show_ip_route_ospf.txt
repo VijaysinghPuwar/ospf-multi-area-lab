@@ -1,0 +1,5 @@
+# R6# show ip route ospf   (captured 2026-10-30T16:47:56.727Z)
+show ip route ospf
+O*IA 0.0.0.0/0 [110/11] via 10.2.36.1, 00:02:20, GigabitEthernet0/0
+
+R6#

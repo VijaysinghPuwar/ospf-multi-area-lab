@@ -1,0 +1,10 @@
+capture 16_virtual_link at 2026-10-30T16:32:14.772Z
+evidence/16_virtual_link/R2__show_ip_ospf_virtual_links.txt  (586 chars)
+evidence/16_virtual_link/R5__show_ip_ospf_virtual_links.txt  (586 chars)
+evidence/16_virtual_link/R5__show_ip_ospf_neighbor.txt  (348 chars)
+evidence/16_virtual_link/R2__show_ip_ospf_neighbor.txt  (603 chars)
+evidence/16_virtual_link/R8__show_ip_route.txt  (2119 chars)
+evidence/16_virtual_link/R1__show_ip_route_ospf.txt  (1618 chars)
+evidence/16_virtual_link/R1__show_ip_ospf_database_summary.txt  (4874 chars)
+evidence/16_virtual_link/R5__show_ip_ospf.txt  (1343 chars)
+evidence/16_virtual_link/R1__show_ip_ospf_border_routers.txt  (419 chars)

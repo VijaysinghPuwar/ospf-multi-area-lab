@@ -1,0 +1,3 @@
+eval(SFM.getFileContents(BASE + "automation/caps.js"));
+CAP_TAG = "07_cost_refbw"; CONSOLE = []; CAP = [["R1","show interfaces GigabitEthernet0/2"],["R1","show ip ospf interface brief"],["R2","show ip ospf interface brief"],["R1","show ip route ospf"],["R1","show ip route 10.1.10.0"],["R1","show ip ospf interface GigabitEthernet0/0"],["R6","show ip route ospf"]]; runFromDisk("automation/capture.js");
+STEP_TAG = "08_cost_manual"; STEP = [["R1","conf",["interface GigabitEthernet0/2","ip ospf cost 150"]],["R2","conf",["interface GigabitEthernet0/2","ip ospf cost 150"]]]; runFromDisk("automation/step.js");

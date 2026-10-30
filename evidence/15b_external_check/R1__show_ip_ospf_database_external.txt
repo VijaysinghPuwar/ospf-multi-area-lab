@@ -1,0 +1,87 @@
+# R1# show ip ospf database external   (captured 2026-10-30T16:28:09.362Z)
+show ip ospf database external
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+                Type-5 AS External Link States
+
+  Routing Bit Set on this LSA
+  LS age: 613
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 0.0.0.0 (External Network Number )
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000001
+  Checksum: 0xfecf
+  Length: 36
+  Network Mask: /0
+        Metric Type: 2 (Larger than any link state path)
+        TOS: 0
+        Metric: 1
+        Forward Address: 0.0.0.0
+        External Route Tag: 1
+
+  Routing Bit Set on this LSA
+  LS age: 3600
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 203.0.113.0 (External Network Number )
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000001
+  Checksum: 0xef10
+  Length: 36
+  Network Mask: /24
+        Metric Type: 1
+        TOS: 0
+        Metric: 20
+        Forward Address: 0.0.0.0
+        External Route Tag: 0
+
+  Routing Bit Set on this LSA
+  LS age: 612
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 203.0.113.0 (External Network Number )
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000002
+  Checksum: 0xed11
+  Length: 36
+  Network Mask: /24
+        Metric Type: 1
+        TOS: 0
+        Metric: 20
+        Forward Address: 0.0.0.0
+        External Route Tag: 0
+
+  Routing Bit Set on this LSA
+  LS age: 48
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 172.16.0.0 (External Network Number )
+  Advertising Router: 7.7.7.7
+  LS Seq Number: 80000002
+  Checksum: 0x6f77
+  Length: 36
+  Network Mask: /24
+        Metric Type: 2 (Larger than any link state path)
+        TOS: 0
+        Metric: 20
+        Forward Address: 0.0.0.0
+        External Route Tag: 0
+
+  Routing Bit Set on this LSA
+  LS age: 48
+  Options: (No TOS-capability, DC)
+  LS Type: AS External Link
+  Link State ID: 172.16.1.0 (External Network Number )
+  Advertising Router: 7.7.7.7
+  LS Seq Number: 80000002
+  Checksum: 0x6481
+  Length: 36
+  Network Mask: /24
+        Metric Type: 2 (Larger than any link state path)
+        TOS: 0
+        Metric: 20
+        Forward Address: 0.0.0.0
+        External Route Tag: 0
+R1#

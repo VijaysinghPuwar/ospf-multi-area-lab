@@ -1,0 +1,20 @@
+# step 13_area3_nssa applied 2026-10-30T16:24:43.226Z
+R4(config)# router ospf 1
+   router ospf 1
+   R4(config-router)#
+R4(config)# area 3 nssa
+   area 3 nssa
+   R4(config-router)#
+R7(config)# router ospf 1
+   router ospf 1
+   R7(config-router)#
+R7(config)# area 3 nssa
+   area 3 nssa
+   R7(config-router)#
+R4# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+R7# clear ip ospf process
+   clear ip ospf process
+   Reset ALL OSPF processes? [no]:  <confirmed>
+rejected=0

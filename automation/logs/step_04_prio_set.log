@@ -1,0 +1,14 @@
+# step 04_prio_set applied 2026-10-30T16:17:31.180Z
+R1(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R1(config-if)#
+R1(config)# ip ospf priority 100
+   ip ospf priority 100
+   R1(config-if)#
+R2(config)# interface GigabitEthernet0/0
+   interface GigabitEthernet0/0
+   R2(config-if)#
+R2(config)# ip ospf priority 50
+   ip ospf priority 50
+   R2(config-if)#
+rejected=0

@@ -1,0 +1,7 @@
+PC-B <- ping 10.1.10.10
+PC-A <- tracert 10.2.10.10
+R6 <- ping 10.4.1.1
+R8 <- ping 203.0.113.1
+R6 <- traceroute 10.4.1.1
+R7 <- ping 203.0.113.1
+R5 <- ping 172.16.0.1 source 10.1.10.1

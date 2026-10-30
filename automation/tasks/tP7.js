@@ -1,0 +1,2 @@
+eval(SFM.getFileContents(BASE + "automation/caps.js"));
+CAP_TAG = "43_type4_check"; CAP = [["R4","show ip ospf database asbr-summary"],["R1","show ip ospf database asbr-summary"],["R2","show ip ospf database asbr-summary"],["R5","show ip ospf database asbr-summary"],["R2","show ip route 172.16.0.0"],["R1","show ip route 172.16.0.0"],["R4","show ip ospf database external 172.16.0.0"]]; runFromDisk("automation/capture.js");
